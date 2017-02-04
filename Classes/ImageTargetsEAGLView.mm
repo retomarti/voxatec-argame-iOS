@@ -21,8 +21,6 @@ countries.
 
 #import "ImageTargetsEAGLView.h"
 #import "Texture.h"
-#import "SampleApplicationUtils.h"
-#import "SampleApplicationShaderUtils.h"
 
 #import "TourManager.h"
 #import "Scene.h"

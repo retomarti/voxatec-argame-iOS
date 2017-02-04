@@ -46,6 +46,7 @@
     findNearbyAdventuresButton.enabled = YES;
 }
 
+
 - (void) viewWillAppear: (BOOL) animated {
     [super viewWillAppear: animated];
     
@@ -91,6 +92,9 @@
     // Turn-off network indicator
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
     
+    // Enable button
+    findNearbyAdventuresButton.enabled = YES;
+
     // Goto next scene
     [self performSegueWithIdentifier: @"AdventureListView" sender: self];
 }

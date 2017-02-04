@@ -4,7 +4,10 @@
  Qualcomm Confidential and Proprietary
  ==============================================================================*/
 
-const char* textureVertexShader = MAKESTRING(
+const char* textureVertexShader = MAKESTRING
+(
+precision mediump float;
+
 // Per vertex shader parameters
 attribute vec4 vertexPosition;
 attribute vec4 vertexNormal;

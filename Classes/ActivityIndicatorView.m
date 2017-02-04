@@ -34,18 +34,30 @@
         // Init vibrancyView
         UIBlurEffect* blurEffect = [UIBlurEffect effectWithStyle: UIBlurEffectStyleLight];
         vibrancyView = [[UIVisualEffectView alloc] initWithEffect: blurEffect];
+        vibrancyView.layer.cornerRadius = 8.0;
+        vibrancyView.layer.masksToBounds = true;
 
         // Init activityIndicator
         activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleGray];
+        activityIndicator.color = [UIColor blackColor];
         
         // Init label
-        label = [[UILabel alloc] init];
+        label = [UILabel new];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor blackColor];
+        label.font = [UIFont systemFontOfSize: 16];
         
-        [self setupView];
+        // Add my elements
+        [self addSubview: glassPane];
+        [self addSubview: vibrancyView];
+        [vibrancyView addSubview: activityIndicator];
+        [vibrancyView addSubview: label];
+        [activityIndicator startAnimating];
     }
     
     return self;
 }
+
 
 /*
 - (id) initWithCoder:(NSCoder*) aDecoder {
@@ -59,6 +71,7 @@
 }
 */
 
+
 - (id) initWithText:(NSString*) text {
     self = [self init];
     
@@ -70,23 +83,14 @@
 }
 
 
-- (void) setupView {
-    // Add my elements
-    [self addSubview: glassPane];
-    [self addSubview: vibrancyView];
-    [vibrancyView addSubview: activityIndicator];
-    [vibrancyView addSubview: label];
-    [activityIndicator startAnimating];
-}
-
-
-// View management
+// View management -------------------------------------------------------------------------------------------
 
 - (void) didMoveToSuperview {
     
     [super didMoveToSuperview];
     
-    // Set glassPane size
+    // Size subviews appropriately
+    
     // UIWindow* window = [UIApplication sharedApplication].windows.firstObject;
     // self.frame = window.frame;
 
@@ -106,24 +110,18 @@
         kIndicatorSize + 2*kVibrancyViewMargin
     );
     vibrancyView.frame = vibViewRect;
-    vibrancyView.layer.cornerRadius = 8.0;
-    vibrancyView.layer.masksToBounds = true;
     
     // Activity indicator
     activityIndicator.frame = CGRectMake(kVibrancyViewMargin,
                                          kVibrancyViewMargin,
                                          kIndicatorSize,
                                          kIndicatorSize);
-    activityIndicator.color = [UIColor blackColor];
     
     // Label
-    label.textAlignment = NSTextAlignmentCenter;
     label.frame = CGRectMake(kVibrancyViewMargin + kIndicatorSize + kIndicatorLabelOffset,
                              kVibrancyViewMargin,
                              kIndicatorLabelWidth,
                              kIndicatorSize);
-    label.textColor = [UIColor blackColor];
-    label.font = [UIFont systemFontOfSize: 16];
 }
 
 

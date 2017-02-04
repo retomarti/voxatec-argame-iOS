@@ -10,10 +10,15 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ARGameViewController : UIViewController
+@interface ARGameViewController : UIViewController {
+    @protected
+    UIView* dimBackgroundView;
+}
 
 // Some common functions to our ViewControllers
 - (void) showMessageWithTitle: (NSString*) title message: (NSString*) message;
 - (void) showAlertWithTitle: (NSString*) title errorMessage: (NSString*) message;
+- (void) showDimBackgroundView;
+- (void) hideDimBackgroundView;
 
 @end

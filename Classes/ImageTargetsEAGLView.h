@@ -11,7 +11,6 @@ countries.
 
 #import "Texture.h"
 #import "SampleApplicationSession.h"
-#import "SampleApplication3DModel.h"
 #import "SampleGLResourceHandler.h"
 
 #import "Scene.h"
@@ -64,8 +63,6 @@ countries.
     
     BOOL offTargetTrackingEnabled;
     BOOL trackingScene;
-    
-    SampleApplication3DModel * buildingModel;
 }
 
 @property (nonatomic, weak) SampleApplicationSession* vapp;

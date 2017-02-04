@@ -9,6 +9,9 @@
 
 #import "SceneMapViewController.h"
 #import "ImageTargetsViewController.h"
+#import "HalfSizePresentationController.h"
+#import "HintViewController.h"
+
 
 #define kARGamePinAnnotationIdent @"ARGamePinAnnotationView"
 
@@ -16,7 +19,8 @@
 
 @implementation SceneMapViewController
 
-@synthesize scene, sceneMapViewTitle, mapView, cacheFocusButton, userLocation, detailAnnotationView, hintTextView;
+@synthesize scene, sceneMapViewTitle, mapView, cacheFocusButton, userLocation, hintView, hintTextView,
+            mapTypeToggleButton;
 
 
 // Initialisation --------------------------------------------------------------------------------
@@ -193,31 +197,20 @@
 
 - (IBAction) showHint: (id) sender {
     
-    if ([sender isKindOfClass: [UIButton class]]) {
-        UIButton* button = (UIButton*) sender;
-        
-        // We need the PinView to show / hide a hint
-        UIView* parent = [button superview];
-        while (parent!= nil && ![parent isKindOfClass:[MKPinAnnotationView class]]) {
-            parent = parent.superview;
-        }
-        
-        if (parent != nil) {
-            MKPinAnnotationView* pinView = (MKPinAnnotationView*) parent;
-            
-            if (pinView.detailCalloutAccessoryView == nil) {
-                // Show hint
-                // hintTextView.frame = detailAnnotationView.frame;
-                // hintTextView.text = scene.cache.text;
-                pinView.detailCalloutAccessoryView = detailAnnotationView;
-                pinView.detailCalloutAccessoryView.bounds = CGRectMake(0.0, 0.0, 150.0, 70.0);
-            }
-            else {
-                // hide hint
-                pinView.detailCalloutAccessoryView = nil;
-            }
-        }
-    }
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+    HintViewController* hintViewController = (HintViewController*)
+        [storyboard instantiateViewControllerWithIdentifier: @"HintViewController"];
+    
+    // Setup presentation & animation config
+    [self showDimBackgroundView];
+    
+    hintViewController.modalPresentationStyle = UIModalPresentationCustom;
+    hintViewController.transitioningDelegate = self;
+    hintViewController.delegate = self;
+    hintViewController.hintText1 = scene.cache.text;
+    
+    [self presentViewController: hintViewController animated: true completion: nil];
+    
 }
 
 
@@ -226,6 +219,53 @@
     [self zoomToLocationAndCache];
 }
 
+
+- (IBAction) toggleMapType: (id) sender {
+    if (mapView.mapType == MKMapTypeStandard) {
+        mapView.mapType = MKMapTypeSatellite;
+        
+        // Set background of button
+        /*
+        UIImage* btnBckgImg = [[UIImage imageNamed: @"toolbar_btn_bg.png"]
+                               resizableImageWithCapInsets: UIEdgeInsetsMake(0, 0, 0, 0)];
+        [mapTypeToggleButton setBackgroundImage: btnBckgImg
+                                       forState: UIControlStateNormal
+                                     barMetrics: UIBarMetricsDefault];
+        mapTypeToggleButton.tintColor = [UIColor whiteColor];
+        */
+    }
+    else {
+        mapView.mapType = MKMapTypeStandard;
+        
+        // Reset background
+        /*
+        [mapTypeToggleButton setBackgroundImage: nil
+                                       forState: UIControlStateNormal
+                                     barMetrics: UIBarMetricsDefault];
+        mapTypeToggleButton.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+        */
+    }
+}
+
+
+// UIViewControllerTransitioningDelegate --------------------------------------------------------
+
+- (UIPresentationController*) presentationControllerForPresentedViewController: (UIViewController *) presented
+                                                      presentingViewController: (UIViewController *) presenting sourceViewController: (UIViewController *) source {
+    
+    HalfSizePresentationController* hsPresentationController =
+        [[HalfSizePresentationController alloc] initWithPresentedViewController: presented
+                                                       presentingViewController: presenting];
+    return hsPresentationController;
+
+}
+
+
+// HintViewControllerDelegate --------------------------------------------------------------------
+
+- (void) hintViewDismissed {
+    [self hideDimBackgroundView];
+}
 
 
 // Segue methods --------------------------------------------------------------------------------

@@ -10,13 +10,12 @@ countries.
 #import <AVFoundation/AVFoundation.h>
 #import "ImageTargetsEAGLView.h"
 #import "SampleApplicationSession.h"
-#import "SampleAppMenuViewController.h"
 #import "ARGameViewController.h"
 #import "Story.h"
 #import "Scene.h"
 
 
-@interface ImageTargetsViewController : ARGameViewController <SampleApplicationControl,SampleAppMenuDelegate, SceneTrackerDelegate,AVAudioPlayerDelegate> {
+@interface ImageTargetsViewController : ARGameViewController <SampleApplicationControl, SceneTrackerDelegate,AVAudioPlayerDelegate> {
     QCAR::DataSet*  dataSetCurrent;
     
     // menu options

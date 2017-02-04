@@ -74,6 +74,12 @@ static TourManager* theManager = nil;
 
 
 - (void) gotoNextScene: (Scene*) currentScene {
+    
+}
+
+
+- (void) gotoNextStory: (Story*) currentStory {
+    
 }
 
 

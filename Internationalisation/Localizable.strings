@@ -1,0 +1,51 @@
+/* Vuforia Strings --------------------------------------------------------------------------------------------------*/
+"INIT_LICENSE_ERROR_NO_NETWORK_TRANSIENT" = "Unable to contact server. Please try again later.";
+"INIT_LICENSE_ERROR_NO_NETWORK_PERMANENT" = "No network available. Please make sure you are connected to the Internet.";
+"INIT_LICENSE_ERROR_INVALID_KEY" = "Invalid Key used. Please make sure you are using a valid Vuforia App Key.";
+"INIT_LICENSE_ERROR_CANCELED_KEY" = "This app license key has been canceled and may no longer be used. Please get a new license key.";
+"INIT_LICENSE_ERROR_MISSING_KEY" = "Vuforia App key is missing. Please get a valid key, by logging into your account at developer.vuforia.com and creating a new project.";
+"INIT_LICENSE_ERROR_PRODUCT_TYPE_MISMATCH" = "Vuforia App key is not valid for this product. Please get a valid key, by logging into your account at developer.vuforia.com and choosing the right product type during project creation.";
+"INIT_default" = "Initialization error";
+
+/* General Strings --------------------------------------------------------------------------------------------------*/
+"GEN_SERVER_ACCESS_PROBLEM_DLG_TITLE" = "Server Access Problem";
+"GEN_CAMERA_ACCESS_WARNING_TITLE" = "Camera Access Problem";
+
+/* Adventure Strings ------------------------------------------------------------------------------------------------*/
+"ADV_FIND_NEARBY_ADVENTURES_TEXT" = "Find nearby Adventures";
+"ADV_AUGMENTED_REALITY_ADVENTURES_TITLE" = "Augmented Reality Adventures";
+"ADV_PRICE_VALUE" = "Price: CHF %@.0";
+"ADV_WHATS_ABOUT_LABEL" = "What's about?";
+"ADV_LIST_VIEW_TITLE" = "Adventures";
+"ADV_DETAIL_VIEW_TITLE" = "Adventure";
+
+/* Story Strings ----------------------------------------------------------------------------------------------------*/
+"STORY_VIEW_TITLE" = "Story";
+"STORY_WHAT_YOU_MAY_EXPECT_LABEL" = "What you may expect";
+"STORY_SERVER_ACCESS_PROBLEM_DLG_TITLE" = "Server access problem";
+"STORY_FINISHED_DLG_TITLE" = "Story finished";
+"STORY_FINISHED_DLG_MESSAGE" = "Congratulations! You solved all riddles of this story.";
+
+/* Scene Strings ----------------------------------------------------------------------------------------------------*/
+"SCENE_VIEW_TITLE" = "Cache";
+"SCENE_CACHE_LOADING_INFO" = "Loading Cache Data";
+"SCENE_CACHE_NR_LABEL" = "Cache No. %d";
+"SCENE_HINT_SEG_BTN_1_TEXT" = "1. Hint";
+"SCENE_HINT_SEG_BTN_2_TEXT" = "2. Hint";
+"SCENE_HINT_DISMISS_BTN_TEXT" = "OK, Thanks";
+
+/* Cache Strings ----------------------------------------------------------------------------------------------------*/
+"CACHE_LOCATION_FAILURE_MSG" = "Failed to Get Your Location";
+"CACHE_LOCATION_FAILURE_TITLE" = "Location Error";
+
+/* Image Target Strings ---------------------------------------------------------------------------------------------*/
+"IMG_TARGETS_VIEW_TITLE" = "Artifact";
+"IMG_TARGETS_SHOW_RIDDLE_BUTTON_TEXT" = "Next Cache";
+
+/* Riddle Strings ---------------------------------------------------------------------------------------------------*/
+"RIDDLE_VIEW_TITLE" = "Riddle";
+"RIDDLE_CHALLENGE_LABEL_TEXT" = "Riddle";
+"RIDDLE_RESPONSE_LABEL_TEXT" = "Response";
+"RIDDLE_VALIDATE_BUTTON_TEXT" = "Validate";
+
+

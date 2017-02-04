@@ -14,7 +14,7 @@
 
 
 // Forward declaration
-@class TourManager;
+// @class TourManager;
 
 
 @protocol TourManagerDelegate
@@ -31,28 +31,28 @@
 @end
 
 
-
 @interface TourManager : NSObject {
     @protected
     NSMutableArray* adventures;
+    Adventure* theAdventure;    // Current adventure
     Story* theStory;            // Current story
     Scene* theScene;            // Current scene
     
-    ObjFileParser* parser;
+    ObjFileParser* parser;      // obj file parser
     NSMapTable* fileMapTable;   // maps request-URL to file objects
 }
 
 @property (atomic, strong) id <TourManagerDelegate> delegate;
 @property (atomic, strong) NSMutableArray* adventures;
 
+// Singleton
 + (TourManager*) theManager;
 
 // Tour workflow
+- (void) loadNearbyAdventures;
 - (void) startStory: (Story*) story;
 - (void) gotoNextScene: (Scene*) currentScene;
-
-// Server access
-- (void) loadNearbyAdventures;
 - (void) prepareSceneForSearch: (Scene*) scene;
+- (void) gotoNextStory: (Story*) currentStory;
 
 @end

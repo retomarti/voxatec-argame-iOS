@@ -6,7 +6,7 @@ countries.
 ===============================================================================*/
 
 #import "ImageTargetsViewController.h"
-#import "VuforiaSamplesAppDelegate.h"
+#import "ARQuestAppDelegate.h"
 #import "FileManager.h"
 #import <QCAR/QCAR.h>
 #import <QCAR/TrackerManager.h>
@@ -68,7 +68,7 @@ countries.
     
     eaglView = [[ImageTargetsEAGLView alloc] initWithFrame:viewFrame appSession:vapp];
     [self setView:eaglView];
-    VuforiaSamplesAppDelegate *appDelegate = (VuforiaSamplesAppDelegate*)[[UIApplication sharedApplication] delegate];
+    ARQuestAppDelegate *appDelegate = (ARQuestAppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.glResourceHandler = eaglView;
     
     // double tap used to also trigger the menu
@@ -187,7 +187,7 @@ countries.
     // EAGLView should finish any OpenGL ES commands
     [self finishOpenGLESCommands];
     
-    VuforiaSamplesAppDelegate *appDelegate = (VuforiaSamplesAppDelegate*)[[UIApplication sharedApplication] delegate];
+    ARQuestAppDelegate *appDelegate = (ARQuestAppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.glResourceHandler = nil;
     
     [super viewWillDisappear:animated];

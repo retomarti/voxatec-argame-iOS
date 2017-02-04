@@ -22,7 +22,6 @@ varying vec4 vpeye;      // vertex position in eye coords
 varying vec4 vneye;      // vertex normal in eye coords
 varying vec2 texCoord;
 varying vec4 normal;
-// varying float vclipDist; // vertex distance to clip plane
                                              
 void main()
 {
@@ -32,9 +31,5 @@ void main()
     vneye = normalMatrix * vertexNormal;
     normal = vertexNormal;
     texCoord = vertexTexCoord;
-    
-    // vec4 clipPlane = (0.0, 1.0, 0.0, 0.0);
-    // vclipDist = dot(vertexPosition.xzy, clipPlane.xzy) + clipPlane.w;
-    // vclipDist = vertexPosition.z;
 }
 );

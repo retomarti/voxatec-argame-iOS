@@ -35,14 +35,9 @@ varying vec4 vpeye;
 varying vec4 vneye;
 varying vec2 texCoord;
 varying vec4 normal;
-// varying float vclipDist;
                                                     
 void main()
 {    
-    // Reject fragments behind clip plane
-    // if (vclipDist < 0.0)
-    //     discard;
-
     vec4 n_eye    = normalize(vneye);                              // normalize just to be on the safe side
     vec4 s_eye    = normalize(light.position - vpeye);             // get direction from surface fragment to light
     vec4 v_eye    = normalize(-vpeye);                             // get direction from surface fragment to camera

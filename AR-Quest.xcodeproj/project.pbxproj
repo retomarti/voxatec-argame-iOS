@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18EB634C1ACC70F200EF1C28 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18EB634B1ACC70F200EF1C28 /* Localizable.strings */; };
 		CE363D001C4F671500828DC9 /* Adventure.m in Sources */ = {isa = PBXBuildFile; fileRef = CE363CFF1C4F671500828DC9 /* Adventure.m */; };
 		CE363D031C4F681700828DC9 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = CE363D021C4F681700828DC9 /* Story.m */; };
 		CE363D091C4F9B2100828DC9 /* AppAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE363D081C4F9B2100828DC9 /* AppAboutViewController.m */; };
@@ -17,6 +16,11 @@
 		CE53637A1CE5FB1C000BAC25 /* ARObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5363791CE5FB1C000BAC25 /* ARObject.m */; };
 		CE53637F1CE5FD58000BAC25 /* NamedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53637E1CE5FD58000BAC25 /* NamedObject.m */; };
 		CE5363821CE60C5A000BAC25 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5363811CE60C5A000BAC25 /* Cache.m */; };
+		CE57589D1E4613BD0025B9FA /* treasure-map-launch-img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE57589C1E4613BD0025B9FA /* treasure-map-launch-img.jpg */; };
+		CE57589F1E4634360025B9FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE57589E1E4634360025B9FA /* Localizable.strings */; };
+		CE5758A11E4634800025B9FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5758A01E4634800025B9FA /* Images.xcassets */; };
+		CE5758A41E4647B50025B9FA /* Texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE5758A31E4647B50025B9FA /* Texture.mm */; };
+		CE5758A71E464A1B0025B9FA /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5758A61E464A1B0025B9FA /* Launch.storyboard */; };
 		CE5C4A3B1E34B90B00E2CFE7 /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C4A3A1E34B90B00E2CFE7 /* ActivityIndicatorView.m */; };
 		CE6DAC241C57B58D00DF50B7 /* ImageTargetsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAC231C57B58D00DF50B7 /* ImageTargetsViewController.mm */; };
 		CE7BDC8D1E3BD79C0011EE9C /* ImageTargetsEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDC8C1E3BD79C0011EE9C /* ImageTargetsEAGLView.mm */; };
@@ -29,10 +33,8 @@
 		CE7EBC231E389FF7009DAF90 /* 734-chat-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EBC221E389FF7009DAF90 /* 734-chat-toolbar.png */; };
 		CE7EBC251E38A11F009DAF90 /* 852-map-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EBC241E38A11F009DAF90 /* 852-map-toolbar.png */; };
 		CE7EBC271E38A1FC009DAF90 /* 714-camera-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EBC261E38A1FC009DAF90 /* 714-camera-toolbar.png */; };
-		CEAFDFDC1C57F92F005AD22E /* Magic_wand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEAFDFDB1C57F92F005AD22E /* Magic_wand.mp3 */; };
 		CEAFEEC31E3E6F290089749B /* AppNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAFEEC21E3E6F290089749B /* AppNavigationController.m */; };
 		CEAFEEC61E3F39700089749B /* ARGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAFEEC51E3F39700089749B /* ARGameViewController.m */; };
-		CEAFEEC91E3FADCC0089749B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAFEEC71E3FADCC0089749B /* Launch Screen.storyboard */; };
 		CEAFEECB1E3FE9120089749B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAFEECA1E3FE9120089749B /* MapKit.framework */; };
 		CEB18A571C5CE23F00996647 /* red-wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEB18A561C5CE23F00996647 /* red-wood.jpg */; };
 		CEB18A591C5CED4D00996647 /* pergament-paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEB18A581C5CED4D00996647 /* pergament-paper.jpg */; };
@@ -49,9 +51,20 @@
 		CEE502231E31F6A10046A06E /* AdventureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE502221E31F6A10046A06E /* AdventureDetailViewController.m */; };
 		CEE502251E32646B0046A06E /* treasure-chest-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE502241E32646B0046A06E /* treasure-chest-icon.png */; };
 		CEEEF12F1E22644200040365 /* OglObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEEF12E1E22644200040365 /* OglObject.m */; };
+		CEEF93591E448BC3005E9082 /* SphericalHarmonicShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CEEF93581E448BC3005E9082 /* SphericalHarmonicShader.vsh */; };
+		CEEF935B1E44A07D005E9082 /* SphericalHarmonicShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CEEF935A1E44A07D005E9082 /* SphericalHarmonicShader.fsh */; };
+		CEEF935D1E44DC09005E9082 /* 816-satellite-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEF935C1E44DC09005E9082 /* 816-satellite-toolbar.png */; };
+		CEEF935F1E44E2CF005E9082 /* 724-info-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEF935E1E44E2CF005E9082 /* 724-info-toolbar.png */; };
+		CEEF93621E44EA21005E9082 /* HintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF93611E44EA21005E9082 /* HintViewController.m */; };
+		CEEF93641E44FCCF005E9082 /* toolbar_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEF93631E44FCCF005E9082 /* toolbar_btn_bg.png */; };
+		CEEF93671E45DB3C005E9082 /* HalfSizePresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF93661E45DB3C005E9082 /* HalfSizePresentationController.m */; };
 		CEF1BE061E2E937B00385EA9 /* treasure-map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF1BE051E2E937B00385EA9 /* treasure-map.jpg */; };
 		CEFCC8651E41FFDC008BAD7F /* ARQuestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFCC8641E41FFDC008BAD7F /* ARQuestAppDelegate.m */; };
 		CEFCC86A1E421081008BAD7F /* SampleApplicationSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEFCC8691E421081008BAD7F /* SampleApplicationSession.mm */; };
+		CEFCC86C1E421290008BAD7F /* Magic_wand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEFCC86B1E421290008BAD7F /* Magic_wand.mp3 */; };
+		CEFCC86E1E4212BE008BAD7F /* IT.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFCC86D1E4212BE008BAD7F /* IT.png */; };
+		CEFCC8701E42136E008BAD7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFCC86F1E42136E008BAD7F /* main.m */; };
+		CEFCC8761E426FB5008BAD7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFCC8751E426FB5008BAD7F /* Main.storyboard */; };
 		CEFD4A1B1C4C046800CB0B27 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD4A181C4C046800CB0B27 /* Scene.m */; };
 		CEFD4A1F1C4C048500CB0B27 /* TourManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD4A1E1C4C048500CB0B27 /* TourManager.m */; };
 		CEFD4A241C4C057C00CB0B27 /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD4A211C4C057C00CB0B27 /* Light.m */; };
@@ -82,9 +95,6 @@
 		CEFD4A651C4C0C4300CB0B27 /* DepthMapShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CEFD4A641C4C0C4300CB0B27 /* DepthMapShader.vsh */; };
 		CEFF797E1E2CC8CC006D7F41 /* SceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFF797D1E2CC8CC006D7F41 /* SceneViewController.m */; };
 		CEFF79831E2CFBD0006D7F41 /* RiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFF79821E2CFBD0006D7F41 /* RiddleViewController.m */; };
-		D21B07EC1A1B4AA20041ECF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D21B07EB1A1B4AA20041ECF3 /* main.m */; };
-		D21B07F71A1B4AA20041ECF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21B07F61A1B4AA20041ECF3 /* Images.xcassets */; };
-		D21B085F1A1B698A0041ECF3 /* Texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = D21B085A1A1B698A0041ECF3 /* Texture.mm */; };
 		D21B08711A1B6AD60041ECF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21B08691A1B6AD60041ECF3 /* AVFoundation.framework */; };
 		D21B08721A1B6AD60041ECF3 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21B086A1A1B6AD60041ECF3 /* CoreFoundation.framework */; };
 		D21B08731A1B6AD60041ECF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21B086B1A1B6AD60041ECF3 /* CoreGraphics.framework */; };
@@ -98,12 +108,9 @@
 		D21B08811A1B71190041ECF3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21B08801A1B71190041ECF3 /* CoreMedia.framework */; };
 		D28C51241A8B5B8C000B6C9A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28C51231A8B5B8C000B6C9A /* MediaPlayer.framework */; };
 		D28C51261A8B5BC9000B6C9A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */; };
-		FB7A43531A8E41840068CF5E /* IT.png in Resources */ = {isa = PBXBuildFile; fileRef = FB7A43521A8E41840068CF5E /* IT.png */; };
-		FBEFAEC81A8283F8002B4D62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBEFAEC61A8283F8002B4D62 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18EB634B1ACC70F200EF1C28 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CE363CFE1C4F669000828DC9 /* Adventure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Adventure.h; path = Classes/Adventure.h; sourceTree = SOURCE_ROOT; };
 		CE363CFF1C4F671500828DC9 /* Adventure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Adventure.m; path = Classes/Adventure.m; sourceTree = SOURCE_ROOT; };
 		CE363D011C4F67C000828DC9 /* Story.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Story.h; path = Classes/Story.h; sourceTree = SOURCE_ROOT; };
@@ -122,6 +129,13 @@
 		CE53637E1CE5FD58000BAC25 /* NamedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamedObject.m; path = Classes/NamedObject.m; sourceTree = SOURCE_ROOT; };
 		CE5363801CE60A8E000BAC25 /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cache.h; path = Classes/Cache.h; sourceTree = SOURCE_ROOT; };
 		CE5363811CE60C5A000BAC25 /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cache.m; path = Classes/Cache.m; sourceTree = SOURCE_ROOT; };
+		CE57589C1E4613BD0025B9FA /* treasure-map-launch-img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "treasure-map-launch-img.jpg"; sourceTree = SOURCE_ROOT; };
+		CE57589E1E4634360025B9FA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Internationalisation/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		CE5758A01E4634800025B9FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
+		CE5758A21E4647B50025B9FA /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = Classes/Texture.h; sourceTree = SOURCE_ROOT; };
+		CE5758A31E4647B50025B9FA /* Texture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Texture.mm; path = Classes/Texture.mm; sourceTree = SOURCE_ROOT; };
+		CE5758A51E4648300025B9FA /* SampleGLResourceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleGLResourceHandler.h; path = Classes/SampleGLResourceHandler.h; sourceTree = SOURCE_ROOT; };
+		CE5758A61E464A1B0025B9FA /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = SOURCE_ROOT; };
 		CE5C4A391E34B90B00E2CFE7 /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityIndicatorView.h; path = Classes/ActivityIndicatorView.h; sourceTree = SOURCE_ROOT; };
 		CE5C4A3A1E34B90B00E2CFE7 /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityIndicatorView.m; path = Classes/ActivityIndicatorView.m; sourceTree = SOURCE_ROOT; };
 		CE6DAC221C57B58D00DF50B7 /* ImageTargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageTargetsViewController.h; path = Classes/ImageTargetsViewController.h; sourceTree = SOURCE_ROOT; };
@@ -139,14 +153,11 @@
 		CE7EBC221E389FF7009DAF90 /* 734-chat-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "734-chat-toolbar.png"; path = "Assets/734-chat-toolbar.png"; sourceTree = SOURCE_ROOT; };
 		CE7EBC241E38A11F009DAF90 /* 852-map-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "852-map-toolbar.png"; path = "Assets/852-map-toolbar.png"; sourceTree = SOURCE_ROOT; };
 		CE7EBC261E38A1FC009DAF90 /* 714-camera-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "714-camera-toolbar.png"; path = "Assets/714-camera-toolbar.png"; sourceTree = SOURCE_ROOT; };
-		CE7EBC281E38B5A8009DAF90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE7EBC291E38BED2009DAF90 /* AR-Quest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AR-Quest-Info.plist"; sourceTree = SOURCE_ROOT; };
-		CEAFDFDB1C57F92F005AD22E /* Magic_wand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Magic_wand.mp3; sourceTree = "<group>"; };
 		CEAFEEC11E3E6F290089749B /* AppNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppNavigationController.h; path = Classes/AppNavigationController.h; sourceTree = SOURCE_ROOT; };
 		CEAFEEC21E3E6F290089749B /* AppNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppNavigationController.m; path = Classes/AppNavigationController.m; sourceTree = SOURCE_ROOT; };
 		CEAFEEC41E3F39700089749B /* ARGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARGameViewController.h; path = Classes/ARGameViewController.h; sourceTree = SOURCE_ROOT; };
 		CEAFEEC51E3F39700089749B /* ARGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARGameViewController.m; path = Classes/ARGameViewController.m; sourceTree = SOURCE_ROOT; };
-		CEAFEEC81E3FADCC0089749B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CEAFEECA1E3FE9120089749B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEB18A561C5CE23F00996647 /* red-wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "red-wood.jpg"; path = "Assets/red-wood.jpg"; sourceTree = SOURCE_ROOT; };
 		CEB18A581C5CED4D00996647 /* pergament-paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pergament-paper.jpg"; path = "Assets/pergament-paper.jpg"; sourceTree = SOURCE_ROOT; };
@@ -169,12 +180,24 @@
 		CEE502241E32646B0046A06E /* treasure-chest-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "treasure-chest-icon.png"; path = "Assets/treasure-chest-icon.png"; sourceTree = SOURCE_ROOT; };
 		CEEEF12E1E22644200040365 /* OglObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OglObject.m; path = Classes/OglObject.m; sourceTree = SOURCE_ROOT; };
 		CEEEF1301E22647900040365 /* OglObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OglObject.h; path = Classes/OglObject.h; sourceTree = SOURCE_ROOT; };
+		CEEF93581E448BC3005E9082 /* SphericalHarmonicShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SphericalHarmonicShader.vsh; path = Classes/Shaders/SphericalHarmonicShader.vsh; sourceTree = SOURCE_ROOT; };
+		CEEF935A1E44A07D005E9082 /* SphericalHarmonicShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SphericalHarmonicShader.fsh; path = Classes/Shaders/SphericalHarmonicShader.fsh; sourceTree = SOURCE_ROOT; };
+		CEEF935C1E44DC09005E9082 /* 816-satellite-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "816-satellite-toolbar.png"; path = "Assets/816-satellite-toolbar.png"; sourceTree = SOURCE_ROOT; };
+		CEEF935E1E44E2CF005E9082 /* 724-info-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "724-info-toolbar.png"; path = "Assets/724-info-toolbar.png"; sourceTree = SOURCE_ROOT; };
+		CEEF93601E44EA21005E9082 /* HintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HintViewController.h; path = Classes/HintViewController.h; sourceTree = SOURCE_ROOT; };
+		CEEF93611E44EA21005E9082 /* HintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HintViewController.m; path = Classes/HintViewController.m; sourceTree = SOURCE_ROOT; };
+		CEEF93631E44FCCF005E9082 /* toolbar_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toolbar_btn_bg.png; path = Assets/toolbar_btn_bg.png; sourceTree = SOURCE_ROOT; };
+		CEEF93651E45DB3C005E9082 /* HalfSizePresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HalfSizePresentationController.h; path = Classes/HalfSizePresentationController.h; sourceTree = SOURCE_ROOT; };
+		CEEF93661E45DB3C005E9082 /* HalfSizePresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HalfSizePresentationController.m; path = Classes/HalfSizePresentationController.m; sourceTree = SOURCE_ROOT; };
 		CEF1BE051E2E937B00385EA9 /* treasure-map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "treasure-map.jpg"; path = "Assets/treasure-map.jpg"; sourceTree = SOURCE_ROOT; };
 		CEFCC8631E41FFDC008BAD7F /* ARQuestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARQuestAppDelegate.h; path = Classes/ARQuestAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		CEFCC8641E41FFDC008BAD7F /* ARQuestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARQuestAppDelegate.m; path = Classes/ARQuestAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		CEFCC8671E420F97008BAD7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		CEFCC8681E421081008BAD7F /* SampleApplicationSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleApplicationSession.h; path = Classes/SampleApplicationSession.h; sourceTree = SOURCE_ROOT; };
 		CEFCC8691E421081008BAD7F /* SampleApplicationSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SampleApplicationSession.mm; path = Classes/SampleApplicationSession.mm; sourceTree = SOURCE_ROOT; };
+		CEFCC86B1E421290008BAD7F /* Magic_wand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Magic_wand.mp3; path = Assets/Magic_wand.mp3; sourceTree = SOURCE_ROOT; };
+		CEFCC86D1E4212BE008BAD7F /* IT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IT.png; path = Assets/IT.png; sourceTree = SOURCE_ROOT; };
+		CEFCC86F1E42136E008BAD7F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		CEFCC8751E426FB5008BAD7F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		CEFD4A171C4C046800CB0B27 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = Classes/Scene.h; sourceTree = SOURCE_ROOT; };
 		CEFD4A181C4C046800CB0B27 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scene.m; path = Classes/Scene.m; sourceTree = SOURCE_ROOT; };
 		CEFD4A1D1C4C048500CB0B27 /* TourManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TourManager.h; path = Classes/TourManager.h; sourceTree = SOURCE_ROOT; };
@@ -228,10 +251,6 @@
 		CEFF79811E2CFBB4006D7F41 /* RiddleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RiddleViewController.h; path = Classes/RiddleViewController.h; sourceTree = SOURCE_ROOT; };
 		CEFF79821E2CFBD0006D7F41 /* RiddleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RiddleViewController.m; path = Classes/RiddleViewController.m; sourceTree = SOURCE_ROOT; };
 		D21B07E61A1B4AA20041ECF3 /* AR-Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Quest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D21B07EB1A1B4AA20041ECF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D21B07F61A1B4AA20041ECF3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D21B08591A1B698A0041ECF3 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = Classes/SampleApplication/Texture.h; sourceTree = "<group>"; };
-		D21B085A1A1B698A0041ECF3 /* Texture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Texture.mm; path = Classes/SampleApplication/Texture.mm; sourceTree = "<group>"; };
 		D21B08691A1B6AD60041ECF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D21B086A1A1B6AD60041ECF3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		D21B086B1A1B6AD60041ECF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -245,8 +264,6 @@
 		D21B08801A1B71190041ECF3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D28C51231A8B5B8C000B6C9A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		FB1024CF1A827FC000A2536F /* SampleGLResourceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleGLResourceHandler.h; path = Classes/SampleApplication/SampleGLResourceHandler.h; sourceTree = "<group>"; };
-		FB7A43521A8E41840068CF5E /* IT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IT.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +315,8 @@
 				CE6DAC231C57B58D00DF50B7 /* ImageTargetsViewController.mm */,
 				CEFF79811E2CFBB4006D7F41 /* RiddleViewController.h */,
 				CEFF79821E2CFBD0006D7F41 /* RiddleViewController.m */,
+				CEEF93601E44EA21005E9082 /* HintViewController.h */,
+				CEEF93611E44EA21005E9082 /* HintViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -315,14 +334,14 @@
 				CEFD4A271C4C059500CB0B27 /* Shader.mm */,
 				CEFD4A2A1C4C05B000CB0B27 /* ShaderUtils.h */,
 				CEFD4A291C4C05B000CB0B27 /* ShaderUtils.cpp */,
-				D21B08591A1B698A0041ECF3 /* Texture.h */,
-				D21B085A1A1B698A0041ECF3 /* Texture.mm */,
 				CEFD4A321C4C082600CB0B27 /* LightShader.h */,
 				CEFD4A331C4C082600CB0B27 /* LightShader.mm */,
 				CEC13F8C1C4D763A004231EC /* DepthMapShader.h */,
 				CEC13F8D1C4D763A004231EC /* DepthMapShader.mm */,
 				CEFD4A351C4C086200CB0B27 /* MaterialShader.h */,
 				CEFD4A361C4C086200CB0B27 /* MaterialShader.mm */,
+				CE5758A21E4647B50025B9FA /* Texture.h */,
+				CE5758A31E4647B50025B9FA /* Texture.mm */,
 				CEFD4A381C4C08A100CB0B27 /* TextureShader.h */,
 				CEFD4A391C4C08A100CB0B27 /* TextureShader.mm */,
 				CEFD4A3B1C4C08D900CB0B27 /* TextureLightShader.h */,
@@ -373,6 +392,8 @@
 				CEFD4A5A1C4C0B6200CB0B27 /* TextureLightShader2.fsh */,
 				CEFD4A641C4C0C4300CB0B27 /* DepthMapShader.vsh */,
 				CEFD4A621C4C0C2D00CB0B27 /* DepthMapShader.fsh */,
+				CEEF93581E448BC3005E9082 /* SphericalHarmonicShader.vsh */,
+				CEEF935A1E44A07D005E9082 /* SphericalHarmonicShader.fsh */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -413,6 +434,8 @@
 				CED6E7C81E2E55640037991E /* NSString+HTML.m */,
 				CE5C4A391E34B90B00E2CFE7 /* ActivityIndicatorView.h */,
 				CE5C4A3A1E34B90B00E2CFE7 /* ActivityIndicatorView.m */,
+				CEEF93651E45DB3C005E9082 /* HalfSizePresentationController.h */,
+				CEEF93661E45DB3C005E9082 /* HalfSizePresentationController.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -439,9 +462,9 @@
 			children = (
 				D21B08111A1B4C500041ECF3 /* Classes */,
 				D21B08151A1B4D2A0041ECF3 /* Resources */,
-				D21B07F61A1B4AA20041ECF3 /* Images.xcassets */,
-				CEAFEEC71E3FADCC0089749B /* Launch Screen.storyboard */,
-				FBEFAEC61A8283F8002B4D62 /* Main.storyboard */,
+				CE5758A01E4634800025B9FA /* Images.xcassets */,
+				CE5758A61E464A1B0025B9FA /* Launch.storyboard */,
+				CEFCC8751E426FB5008BAD7F /* Main.storyboard */,
 				D21B07E91A1B4AA20041ECF3 /* Supporting Files */,
 			);
 			name = "AR-Quest Classes";
@@ -451,9 +474,9 @@
 		D21B07E91A1B4AA20041ECF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18EB634B1ACC70F200EF1C28 /* Localizable.strings */,
+				CE57589E1E4634360025B9FA /* Localizable.strings */,
+				CEFCC86F1E42136E008BAD7F /* main.m */,
 				CE7EBC291E38BED2009DAF90 /* AR-Quest-Info.plist */,
-				D21B07EB1A1B4AA20041ECF3 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -478,9 +501,9 @@
 			children = (
 				CEFCC8631E41FFDC008BAD7F /* ARQuestAppDelegate.h */,
 				CEFCC8641E41FFDC008BAD7F /* ARQuestAppDelegate.m */,
+				CE5758A51E4648300025B9FA /* SampleGLResourceHandler.h */,
 				CEFCC8681E421081008BAD7F /* SampleApplicationSession.h */,
 				CEFCC8691E421081008BAD7F /* SampleApplicationSession.mm */,
-				FB1024CF1A827FC000A2536F /* SampleGLResourceHandler.h */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -488,7 +511,7 @@
 		D21B08151A1B4D2A0041ECF3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEAFDFDB1C57F92F005AD22E /* Magic_wand.mp3 */,
+				CEFCC86B1E421290008BAD7F /* Magic_wand.mp3 */,
 				D21B08161A1B4D320041ECF3 /* Assets */,
 			);
 			name = Resources;
@@ -497,19 +520,23 @@
 		D21B08161A1B4D320041ECF3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CEEF93631E44FCCF005E9082 /* toolbar_btn_bg.png */,
+				CEEF935E1E44E2CF005E9082 /* 724-info-toolbar.png */,
+				CEEF935C1E44DC09005E9082 /* 816-satellite-toolbar.png */,
+				CEFCC86D1E4212BE008BAD7F /* IT.png */,
 				CE7BDC921E3CF65D0011EE9C /* 869-pin-toolbar.png */,
 				CE7EBC261E38A1FC009DAF90 /* 714-camera-toolbar.png */,
 				CE7EBC241E38A11F009DAF90 /* 852-map-toolbar.png */,
 				CE7EBC221E389FF7009DAF90 /* 734-chat-toolbar.png */,
 				CEE502241E32646B0046A06E /* treasure-chest-icon.png */,
-				CEF1BE051E2E937B00385EA9 /* treasure-map.jpg */,
 				CEB18A561C5CE23F00996647 /* red-wood.jpg */,
 				CEB18A581C5CED4D00996647 /* pergament-paper.jpg */,
 				CED6E7C41E2E18000037991E /* open-book-icon.png */,
 				CED6E7C21E2E0F050037991E /* question-mark-icon.png */,
+				CEF1BE051E2E937B00385EA9 /* treasure-map.jpg */,
+				CE57589C1E4613BD0025B9FA /* treasure-map-launch-img.jpg */,
 				CE7BDC901E3CA5ED0011EE9C /* treasure-map-icon-32.png */,
 				CED6E7C01E2E0CF30037991E /* treasure-map-icon.png */,
-				FB7A42F71A8E376B0068CF5E /* ImageTargets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -543,15 +570,6 @@
 				CE7BDC8C1E3BD79C0011EE9C /* ImageTargetsEAGLView.mm */,
 			);
 			name = ImageTargets;
-			sourceTree = "<group>";
-		};
-		FB7A42F71A8E376B0068CF5E /* ImageTargets */ = {
-			isa = PBXGroup;
-			children = (
-				FB7A43521A8E41840068CF5E /* IT.png */,
-			);
-			name = ImageTargets;
-			path = Resources/Assets/ImageTargets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -620,18 +638,20 @@
 			files = (
 				CEFD4A5F1C4C0B9200CB0B27 /* TextureShader.fsh in Resources */,
 				CEC534AC1C452A750072AD18 /* MaterialShader.fsh in Resources */,
-				CEAFEEC91E3FADCC0089749B /* Launch Screen.storyboard in Resources */,
-				FBEFAEC81A8283F8002B4D62 /* Main.storyboard in Resources */,
-				18EB634C1ACC70F200EF1C28 /* Localizable.strings in Resources */,
+				CEEF935B1E44A07D005E9082 /* SphericalHarmonicShader.fsh in Resources */,
 				CEFD4A5D1C4C0B6200CB0B27 /* TextureLightShader2.vsh in Resources */,
 				CEFD4A651C4C0C4300CB0B27 /* DepthMapShader.vsh in Resources */,
-				FB7A43531A8E41840068CF5E /* IT.png in Resources */,
+				CEEF935F1E44E2CF005E9082 /* 724-info-toolbar.png in Resources */,
+				CEEF93641E44FCCF005E9082 /* toolbar_btn_bg.png in Resources */,
 				CEB18A591C5CED4D00996647 /* pergament-paper.jpg in Resources */,
 				CEFD4A5C1C4C0B6200CB0B27 /* TextureLightShader2.fsh in Resources */,
+				CE5758A11E4634800025B9FA /* Images.xcassets in Resources */,
+				CE57589D1E4613BD0025B9FA /* treasure-map-launch-img.jpg in Resources */,
 				CEC534AD1C452A750072AD18 /* MaterialShader.vsh in Resources */,
-				CEAFDFDC1C57F92F005AD22E /* Magic_wand.mp3 in Resources */,
 				CED6E7C31E2E0F050037991E /* question-mark-icon.png in Resources */,
+				CE5758A71E464A1B0025B9FA /* Launch.storyboard in Resources */,
 				CED6E7C51E2E18000037991E /* open-book-icon.png in Resources */,
+				CE57589F1E4634360025B9FA /* Localizable.strings in Resources */,
 				CE7EBC231E389FF7009DAF90 /* 734-chat-toolbar.png in Resources */,
 				CEF1BE061E2E937B00385EA9 /* treasure-map.jpg in Resources */,
 				CE7BDC951E3DDDE80011EE9C /* ClipPlaneShader.fsh in Resources */,
@@ -640,14 +660,18 @@
 				CEE502251E32646B0046A06E /* treasure-chest-icon.png in Resources */,
 				CE7BDC911E3CA5ED0011EE9C /* treasure-map-icon-32.png in Resources */,
 				CEFD4A631C4C0C2D00CB0B27 /* DepthMapShader.fsh in Resources */,
-				D21B07F71A1B4AA20041ECF3 /* Images.xcassets in Resources */,
+				CEFCC86E1E4212BE008BAD7F /* IT.png in Resources */,
 				CE7BDC931E3CF65D0011EE9C /* 869-pin-toolbar.png in Resources */,
 				CE7EBC271E38A1FC009DAF90 /* 714-camera-toolbar.png in Resources */,
 				CEFD4A611C4C0BA100CB0B27 /* TextureShader.vsh in Resources */,
 				CE7EBC251E38A11F009DAF90 /* 852-map-toolbar.png in Resources */,
+				CEFCC86C1E421290008BAD7F /* Magic_wand.mp3 in Resources */,
 				CEFD4A581C4C0B3C00CB0B27 /* TextureLightShader.fsh in Resources */,
 				CE7BDC971E3DDE0A0011EE9C /* ClipPlaneShader.vsh in Resources */,
+				CEEF93591E448BC3005E9082 /* SphericalHarmonicShader.vsh in Resources */,
+				CEFCC8761E426FB5008BAD7F /* Main.storyboard in Resources */,
 				CEB18A571C5CE23F00996647 /* red-wood.jpg in Resources */,
+				CEEF935D1E44DC09005E9082 /* 816-satellite-toolbar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +685,6 @@
 				CE5C4A3B1E34B90B00E2CFE7 /* ActivityIndicatorView.m in Sources */,
 				CE363D0C1C539D6300828DC9 /* AdventureListViewController.m in Sources */,
 				CEFD4A3D1C4C08D900CB0B27 /* TextureLightShader.mm in Sources */,
-				D21B085F1A1B698A0041ECF3 /* Texture.mm in Sources */,
 				CEFF797E1E2CC8CC006D7F41 /* SceneViewController.m in Sources */,
 				CEAFEEC31E3E6F290089749B /* AppNavigationController.m in Sources */,
 				CEFD4A4C1C4C0A9400CB0B27 /* Scanner.m in Sources */,
@@ -677,18 +700,20 @@
 				CE53637F1CE5FD58000BAC25 /* NamedObject.m in Sources */,
 				CEFD4A421C4C0A2E00CB0B27 /* MtlFileParser.m in Sources */,
 				CEAFEEC61E3F39700089749B /* ARGameViewController.m in Sources */,
-				D21B07EC1A1B4AA20041ECF3 /* main.m in Sources */,
 				CEFD4A341C4C082600CB0B27 /* LightShader.mm in Sources */,
 				CED6E7C91E2E55640037991E /* NSString+HTML.m in Sources */,
 				CE363D0F1C539DB800828DC9 /* StoryViewController.m in Sources */,
+				CEFCC8701E42136E008BAD7F /* main.m in Sources */,
 				CE7EBC111E3611A6009DAF90 /* SemanticError.m in Sources */,
 				CEFD4A281C4C059500CB0B27 /* Shader.mm in Sources */,
 				CEE502231E31F6A10046A06E /* AdventureDetailViewController.m in Sources */,
+				CEEF93671E45DB3C005E9082 /* HalfSizePresentationController.m in Sources */,
 				CEB247011C62030D00BA9A3A /* File.m in Sources */,
 				CEFD4A3A1C4C08A100CB0B27 /* TextureShader.mm in Sources */,
 				CEEEF12F1E22644200040365 /* OglObject.m in Sources */,
 				CEFD4A1F1C4C048500CB0B27 /* TourManager.m in Sources */,
 				CEFD4A371C4C086200CB0B27 /* MaterialShader.mm in Sources */,
+				CE5758A41E4647B50025B9FA /* Texture.mm in Sources */,
 				CEFF79831E2CFBD0006D7F41 /* RiddleViewController.m in Sources */,
 				CE6DAC241C57B58D00DF50B7 /* ImageTargetsViewController.mm in Sources */,
 				CEFD4A1B1C4C046800CB0B27 /* Scene.m in Sources */,
@@ -702,6 +727,7 @@
 				CEFD4A311C4C063C00CB0B27 /* FileManager.m in Sources */,
 				CEFD4A461C4C0A4300CB0B27 /* ObjFileParser.m in Sources */,
 				CE7BDC9E1E3DEF2E0011EE9C /* ClipPlaneShader.mm in Sources */,
+				CEEF93621E44EA21005E9082 /* HintViewController.m in Sources */,
 				CEFD4A431C4C0A2E00CB0B27 /* MtlFileScanner.m in Sources */,
 				CEFD4A2B1C4C05B000CB0B27 /* ShaderUtils.cpp in Sources */,
 				CE5363821CE60C5A000BAC25 /* Cache.m in Sources */,
@@ -710,26 +736,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CEAFEEC71E3FADCC0089749B /* Launch Screen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEAFEEC81E3FADCC0089749B /* Base */,
-				CEFCC8671E420F97008BAD7F /* en */,
-			);
-			name = "Launch Screen.storyboard";
-			sourceTree = "<group>";
-		};
-		FBEFAEC61A8283F8002B4D62 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE7EBC281E38B5A8009DAF90 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D21B08071A1B4AA20041ECF3 /* Debug */ = {

@@ -46,4 +46,21 @@
     
 }
 
+
+- (void) showDimBackgroundView {
+    if (dimBackgroundView == NULL) {
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        dimBackgroundView = [[UIView alloc] initWithFrame:screenRect];
+        dimBackgroundView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    }
+
+    [self.view addSubview: dimBackgroundView];
+}
+
+
+- (void) hideDimBackgroundView {
+    [dimBackgroundView removeFromSuperview];
+}
+
+
 @end

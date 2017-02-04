@@ -43,7 +43,7 @@ void main()
     
     vec4 Iamb     = light.ambientColor * material.ambientCoeff;
     vec4 Idiff    = light.diffuseColor * material.diffuseCoeff * max(dot(n, lightDir), 0.0);
-    vec4 Ispec    = light.specularColor * material.specularCoeff; // * pow(max(dot(h_eye, n_eye), 0.0), material.specularExp);
+    vec4 Ispec    = light.specularColor * material.specularCoeff;
     vec4 texColor = texture2D(texSampler2D, texCoord);
     
     gl_FragColor  = (Iamb + Idiff + Ispec) * texColor;
