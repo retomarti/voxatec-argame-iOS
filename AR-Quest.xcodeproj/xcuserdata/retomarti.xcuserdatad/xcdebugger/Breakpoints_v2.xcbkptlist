@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/ImageTargetsViewController.mm"
-            timestampString = "507461921.250762"
+            timestampString = "507983307.348564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "628"
-            endingLineNumber = "628"
+            startingLineNumber = "660"
+            endingLineNumber = "660"
             landmarkName = "-playStartTrackingSound"
             landmarkType = "7">
             <Locations>
@@ -554,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/ImageTargetsViewController.mm"
-            timestampString = "507461921.250762"
+            timestampString = "507983307.348564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "637"
-            endingLineNumber = "637"
+            startingLineNumber = "669"
+            endingLineNumber = "669"
             landmarkName = "-audioPlayerDecodeErrorDidOccur:error:"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/ImageTargetsViewController.mm"
-            timestampString = "507461921.250762"
+            timestampString = "507983307.348564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
             landmarkName = "-loadObjectTrackerDataSet:"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/ImageTargetsViewController.mm"
-            timestampString = "507461921.250762"
+            timestampString = "507983307.348564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "648"
-            endingLineNumber = "648"
+            startingLineNumber = "680"
+            endingLineNumber = "680"
             landmarkName = "-startTrackingScene:"
             landmarkType = "7">
          </BreakpointContent>
@@ -880,6 +880,22 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "-didReceiveMemoryWarning"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/ImageTargetsViewController.mm"
+            timestampString = "507983307.348564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "-onInitARDone:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

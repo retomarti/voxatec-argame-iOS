@@ -167,7 +167,7 @@ namespace {
     // been stopped, so we now make sure all OpenGL ES commands complete before
     // we (potentially) go into the background
     if (context) {
-        [EAGLContext setCurrentContext:context];
+        [EAGLContext setCurrentContext: context];
         glFinish();
     }
 }

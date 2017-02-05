@@ -32,6 +32,15 @@ countries.
 @synthesize imageTargetsViewTitle, tapGestureRecognizer, vapp, eaglView, scene, audioPlayer, showRiddleButton;
 
 
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+    scene = nil;
+    audioPlayer = nil;
+}
+
+
+// Initialization --------------------------------------------------------------------------------------------
+
 - (CGRect) getCurrentARViewFrame {
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
@@ -47,6 +56,74 @@ countries.
 }
 
 
+- (void) initEAGLView {
+    extendedTrackingEnabled = YES;
+    continuousAutofocusEnabled = YES;
+    flashEnabled = NO;
+    frontCameraEnabled = NO;
+
+    CGRect viewFrame = [self getCurrentARViewFrame];
+    eaglView = [[ImageTargetsEAGLView alloc] initWithFrame:viewFrame appSession:vapp];
+    [self setView: eaglView];
+}
+
+
+- (void) initApplicationDelegate {
+    ARQuestAppDelegate* appDelegate = (ARQuestAppDelegate*) [[UIApplication sharedApplication] delegate];
+    appDelegate.glResourceHandler = eaglView;
+}
+
+
+- (void) resetApplicationDelegate {
+    ARQuestAppDelegate* appDelegate = (ARQuestAppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegate.glResourceHandler = nil;
+}
+
+
+- (void) initGestureRecognizers {
+    
+    // double tap used to also trigger the menu
+    UITapGestureRecognizer* doubleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(doubleTapGestureAction:)];
+    doubleTap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer: doubleTap];
+    
+    // a single tap will trigger a single autofocus operation
+    tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(autofocus:)];
+    if (doubleTap != NULL) {
+        [tapGestureRecognizer requireGestureRecognizerToFail: doubleTap];
+    }
+    
+    UISwipeGestureRecognizer* swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAction:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
+
+}
+
+
+- (void) initApplicationNotifications {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dismissARViewController)
+                                                 name:@"kDismissARViewController"
+                                               object:nil];
+    
+    // we use the iOS notification to pause/resume the AR when the application goes (or come back from) background
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector: @selector(pauseAR)
+     name: UIApplicationWillResignActiveNotification
+     object: nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector: @selector(resumeAR)
+     name: UIApplicationDidBecomeActiveNotification
+     object:nil];
+}
+
+
+// View Management -----------------------------------------------------------------------------------------
+
 - (void) loadView {
     
     // Custom initialization
@@ -57,59 +134,18 @@ countries.
         self.ARViewPlaceholder = nil;
     }
     
-    extendedTrackingEnabled = YES;
-    continuousAutofocusEnabled = YES;
-    flashEnabled = NO;
-    frontCameraEnabled = NO;
+    vapp = [[SampleApplicationSession alloc] initWithDelegate: self];
     
-    vapp = [[SampleApplicationSession alloc] initWithDelegate:self];
-    
-    CGRect viewFrame = [self getCurrentARViewFrame];
-    
-    eaglView = [[ImageTargetsEAGLView alloc] initWithFrame:viewFrame appSession:vapp];
-    [self setView:eaglView];
-    ARQuestAppDelegate *appDelegate = (ARQuestAppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.glResourceHandler = eaglView;
-    
-    // double tap used to also trigger the menu
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(doubleTapGestureAction:)];
-    doubleTap.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:doubleTap];
-    
-    // a single tap will trigger a single autofocus operation
-    tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(autofocus:)];
-    if (doubleTap != NULL) {
-        [tapGestureRecognizer requireGestureRecognizerToFail:doubleTap];
-    }
-    
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAction:)];
-    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipeRight];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dismissARViewController)
-                                                 name:@"kDismissARViewController"
-                                               object:nil];
-    
-    // we use the iOS notification to pause/resume the AR when the application goes (or come back from) background
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(pauseAR)
-     name:UIApplicationWillResignActiveNotification
-     object:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(resumeAR)
-     name:UIApplicationDidBecomeActiveNotification
-     object:nil];
-    
+    [self initEAGLView];
+    [self initGestureRecognizers];
+    [self initApplicationNotifications];
+}
+
+
+- (void) initAR {
     // initialize AR
     UIInterfaceOrientation intfOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    [vapp initAR:QCAR::GL_20 orientation: intfOrientation];
-
-    // show loading animation while AR is being initialized
-    [self showLoadingAnimation];
+    [vapp initAR: QCAR::GL_20 orientation: intfOrientation];
 }
 
 - (void) pauseAR {
@@ -120,8 +156,8 @@ countries.
 }
 
 - (void) resumeAR {
-    NSError * error = nil;
-    if(! [vapp resumeAR:&error]) {
+    NSError* error = nil;
+    if(! [vapp resumeAR: &error]) {
         NSLog(@"Error resuming AR:%@", [error description]);
     }
     // on resume, we reset the flash
@@ -167,37 +203,33 @@ countries.
 }
 
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void) viewWillAppear: (BOOL)animated {
     [super viewWillAppear: animated];
     
+    [self initApplicationDelegate];
+    [self initAR];
+    [self showLoadingAnimation];
 }
 
 
-- (void) viewWillDisappear:(BOOL) animated {
+- (void) viewWillDisappear: (BOOL) animated {
     // on iOS 7, viewWillDisappear may be called when the menu is shown
     // but we don't want to stop the AR view in that case
     if (self.showingMenu) {
         return;
     }
     
-    [vapp stopAR:nil];
+    [vapp stopAR: nil];
     
     // Be a good OpenGL ES citizen: now that QCAR is paused and the render
     // thread is not executing, inform the root view controller that the
     // EAGLView should finish any OpenGL ES commands
     [self finishOpenGLESCommands];
+    [self resetApplicationDelegate];
     
-    ARQuestAppDelegate *appDelegate = (ARQuestAppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.glResourceHandler = nil;
-    
-    [super viewWillDisappear:animated];
+    [super viewWillDisappear: animated];
 }
 
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver: self];
-    scene = nil;
-    audioPlayer = nil;
-}
 
 - (void) finishOpenGLESCommands {
     // Called in response to applicationWillResignActive.  Inform the EAGLView
@@ -522,11 +554,11 @@ countries.
 
 
 - (void) autofocus: (UITapGestureRecognizer*) sender {
-    [self performSelector:@selector(cameraPerformAutoFocus) withObject:nil afterDelay:.4];
+    [self performSelector: @selector(cameraPerformAutoFocus) withObject: nil afterDelay: .4];
 }
 
 
-- (void)cameraPerformAutoFocus {
+- (void) cameraPerformAutoFocus {
     QCAR::CameraDevice::getInstance().setFocusMode(QCAR::CameraDevice::FOCUS_MODE_TRIGGERAUTO);
 }
 

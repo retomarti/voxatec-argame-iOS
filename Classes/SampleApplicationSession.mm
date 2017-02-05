@@ -102,7 +102,7 @@ namespace {
 }
 
 // Initialize the Vuforia SDK
-- (void) initAR:(int) QCARInitFlags orientation:(UIInterfaceOrientation) ARViewOrientation {
+- (void) initAR: (int) QCARInitFlags orientation: (UIInterfaceOrientation) ARViewOrientation {
     self.cameraIsActive = NO;
     self.cameraIsStarted = NO;
     mQCARInitFlags = QCARInitFlags;
@@ -111,12 +111,12 @@ namespace {
 
     // Initialising QCAR is a potentially lengthy operation, so perform it on a
     // background thread
-    [self performSelectorInBackground:@selector(initQCARInBackground) withObject:nil];
+    [self performSelectorInBackground: @selector(initQCARInBackground) withObject:nil];
 }
 
 // Initialise QCAR
 // (Performed on a background thread)
-- (void)initQCARInBackground
+- (void) initQCARInBackground
 {
     // Background thread must have its own autorelease pool
     @autoreleasepool {
@@ -285,7 +285,7 @@ namespace {
     }
 }
 
-- (CGSize)getCurrentARViewBoundsSize
+- (CGSize) getCurrentARViewBoundsSize
 {
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     CGSize viewSize = screenBounds.size;
@@ -359,11 +359,11 @@ namespace {
 - (void) loadTrackerData {
     // Loading tracker data is a potentially lengthy operation, so perform it on
     // a background thread
-    [self performSelectorInBackground:@selector(loadTrackerDataInBackground) withObject:nil];
+    [self performSelectorInBackground: @selector(loadTrackerDataInBackground) withObject: nil];
 }
 
 // *** Performed on a background thread ***
-- (void)loadTrackerDataInBackground
+- (void) loadTrackerDataInBackground
 {
     // Background thread must have its own autorelease pool
     @autoreleasepool {
@@ -374,7 +374,7 @@ namespace {
         }
     }
     
-    [self.delegate onInitARDone:nil];
+    [self.delegate onInitARDone: nil];
 }
 
 // Configure QCAR with the video background size
@@ -573,7 +573,7 @@ namespace {
 }
 
 // Stop QCAR camera
-- (bool)stopAR:(NSError **)error {
+- (bool) stopAR: (NSError **)error {
     // Stop the camera
     if (self.cameraIsActive) {
         // Stop and deinit the camera
