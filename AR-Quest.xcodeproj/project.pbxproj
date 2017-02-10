@@ -197,7 +197,7 @@
 		CEFCC86B1E421290008BAD7F /* Magic_wand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Magic_wand.mp3; path = Assets/Magic_wand.mp3; sourceTree = SOURCE_ROOT; };
 		CEFCC86D1E4212BE008BAD7F /* IT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IT.png; path = Assets/IT.png; sourceTree = SOURCE_ROOT; };
 		CEFCC86F1E42136E008BAD7F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
-		CEFCC8751E426FB5008BAD7F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		CEFCC8751E426FB5008BAD7F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CEFD4A171C4C046800CB0B27 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = Classes/Scene.h; sourceTree = SOURCE_ROOT; };
 		CEFD4A181C4C046800CB0B27 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scene.m; path = Classes/Scene.m; sourceTree = SOURCE_ROOT; };
 		CEFD4A1D1C4C048500CB0B27 /* TourManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TourManager.h; path = Classes/TourManager.h; sourceTree = SOURCE_ROOT; };
@@ -444,6 +444,8 @@
 			isa = PBXGroup;
 			children = (
 				D21B087B1A1B6C710041ECF3 /* Frameworks */,
+				CEFCC8751E426FB5008BAD7F /* Main.storyboard */,
+				CE5758A61E464A1B0025B9FA /* Launch.storyboard */,
 				D21B07E81A1B4AA20041ECF3 /* AR-Quest Classes */,
 				D21B07E71A1B4AA20041ECF3 /* Products */,
 			);
@@ -463,8 +465,6 @@
 				D21B08111A1B4C500041ECF3 /* Classes */,
 				D21B08151A1B4D2A0041ECF3 /* Resources */,
 				CE5758A01E4634800025B9FA /* Images.xcassets */,
-				CE5758A61E464A1B0025B9FA /* Launch.storyboard */,
-				CEFCC8751E426FB5008BAD7F /* Main.storyboard */,
 				D21B07E91A1B4AA20041ECF3 /* Supporting Files */,
 			);
 			name = "AR-Quest Classes";
