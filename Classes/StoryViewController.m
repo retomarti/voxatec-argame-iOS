@@ -214,6 +214,7 @@
     }
 }
 
+
 // Unwind segue
 
 - (IBAction) gotoNextScene: (UIStoryboardSegue*) sender {
@@ -221,7 +222,6 @@
     // Prevent user from triggering another story start action
     startStoryButton.enabled = false;
 
-    
     // Switch to next scene (if any)
     Scene* nextScene = [self.story nextSceneTo: self.scene];
     if (nextScene != nil) {

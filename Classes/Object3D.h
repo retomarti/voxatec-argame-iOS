@@ -21,6 +21,7 @@
 @property (atomic, strong) File* obj3DFile;
 @property (atomic, strong) File* materialFile;
 @property (atomic, strong) NSArray* textureFiles;
+@property (atomic) double objScaleFactor;
 
 // Rendering properties
 @property (atomic, strong) NSArray* oglObjects;

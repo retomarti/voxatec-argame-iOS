@@ -418,8 +418,6 @@
 				CEB247031C633BFE00BA9A3A /* Riddle.m */,
 				CEB246FF1C62029400BA9A3A /* File.h */,
 				CEB247001C62030D00BA9A3A /* File.m */,
-				CEFD4A2F1C4C063C00CB0B27 /* FileManager.h */,
-				CEFD4A301C4C063C00CB0B27 /* FileManager.m */,
 				CEFD4A2C1C4C05C400CB0B27 /* Object3D.h */,
 				CEFD4A2D1C4C05C400CB0B27 /* Object3D.m */,
 				CEFD4A1D1C4C048500CB0B27 /* TourManager.h */,
@@ -435,6 +433,8 @@
 				CED6E7C81E2E55640037991E /* NSString+HTML.m */,
 				CE5C4A391E34B90B00E2CFE7 /* ActivityIndicatorView.h */,
 				CE5C4A3A1E34B90B00E2CFE7 /* ActivityIndicatorView.m */,
+				CEFD4A2F1C4C063C00CB0B27 /* FileManager.h */,
+				CEFD4A301C4C063C00CB0B27 /* FileManager.m */,
 				CEEF93651E45DB3C005E9082 /* HalfSizePresentationController.h */,
 				CEEF93661E45DB3C005E9082 /* HalfSizePresentationController.m */,
 			);

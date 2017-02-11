@@ -21,7 +21,7 @@
 }
 // Location attributes
 @property (atomic, strong) NSString* street;
-@property (nonatomic) CLLocationCoordinate2D gpsCoordinates;
+@property (atomic) CLLocationCoordinate2D gpsCoordinates;
 
 // Cache-group & target image
 @property (atomic, strong) NSNumber* cacheGroupId;

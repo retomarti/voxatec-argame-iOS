@@ -18,10 +18,10 @@
 // Outlets
 @property (strong, nonatomic) IBOutlet UINavigationItem* riddleViewTitle;
 @property (strong, nonatomic) IBOutlet UITextView* introTextView;
-@property (strong, retain) IBOutlet UILabel* challengeNameLabel;
-@property (strong, retain) IBOutlet UITextView* challengeTextView;
-@property (strong, retain) IBOutlet UILabel* responseNameLabel;
-@property (strong, retain) IBOutlet UITextField* responseTextView;
+@property (strong, nonatomic) IBOutlet UILabel* challengeNameLabel;
+@property (strong, nonatomic) IBOutlet UITextView* challengeTextView;
+@property (strong, nonatomic) IBOutlet UILabel* responseNameLabel;
+@property (strong, nonatomic) IBOutlet UITextField* responseTextView;
 @property (strong, nonatomic) IBOutlet UIButton* validateButton;
 @property (strong, nonatomic) IBOutlet UITextView* validationResultTextView;
 @property (strong, nonatomic) IBOutlet UIButton* gotoNextSceneButton;

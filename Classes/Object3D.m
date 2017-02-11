@@ -11,7 +11,7 @@
 
 @implementation Object3D
 
-@synthesize obj3DFileName, materialFileName, obj3DFile, materialFile, textureFiles, oglObjects;
+@synthesize obj3DFileName, materialFileName, obj3DFile, materialFile, textureFiles, oglObjects, objScaleFactor;
 
 
 

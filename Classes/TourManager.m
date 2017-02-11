@@ -271,6 +271,8 @@ static TourManager* theManager = nil;
         obj3D.text = [[obj3DDict valueForKey: @"text"] decodeHTMLCharacterEntities];
         obj3D.obj3DFileName = [obj3DDict valueForKey: @"objFileName"];
         obj3D.materialFileName = [obj3DDict valueForKey: @"mtlFileName"];
+        NSNumber* scaleFactor = [obj3DDict valueForKey: @"objScaleFactor"];
+        obj3D.objScaleFactor = [scaleFactor doubleValue];
         
         NSAssert(obj3D.obj3DFileName != nil, @"TourManager: objFileName is nil");
         NSAssert(obj3D.materialFileName != nil, @"TourManager: mtlFileName is nil");
@@ -642,7 +644,7 @@ static TourManager* theManager = nil;
 - (NSError*) parseObj3DFilesForScene: (Scene*) aScene {
     
     Object3D* obj3D = aScene.object3D;
-    NSError* error = [parser parseObjFile: obj3D.obj3DFile];
+    NSError* error = [parser parseObjFile: obj3D.obj3DFile ofObject: obj3D];
     
     if (error == nil)
         obj3D.oglObjects = parser.oglObjects;

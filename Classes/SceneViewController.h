@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "ARGAmeViewController.h"
+#import "ARGameViewController.h"
 #import "Scene.h"
 #import "TourManager.h"
 
@@ -20,9 +20,9 @@
 @property (strong, nonatomic) IBOutlet UINavigationItem* sceneViewTitle;
 @property (strong, nonatomic) IBOutlet UILabel* adventureNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel* storyNameLabel;
-@property (strong, retain) IBOutlet UILabel* sceneNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel* sceneNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel* cacheNrLabel;
-@property (strong, retain) IBOutlet UITextView* sceneTextView;
+@property (strong, nonatomic) IBOutlet UITextView* sceneTextView;
 
 // Data model
 @property (strong, nonatomic) Adventure* adventure;

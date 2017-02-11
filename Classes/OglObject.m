@@ -13,7 +13,7 @@
 @implementation OglObject
 
 @synthesize name;
-@synthesize numVertices, numNormals, numTexCoords;
+@synthesize numVertices, numNormals, numTexCoords, scaleFactor;
 @synthesize vertices, normals, texCoords;
 @synthesize material;
 

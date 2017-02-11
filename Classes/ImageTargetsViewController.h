@@ -34,13 +34,13 @@ countries.
 @property (strong, nonatomic) UIBarButtonItem* showRiddleButton;
 
 // Data model
-@property (nonatomic, strong) Scene* scene;
+@property (strong, nonatomic) Scene* scene;
 
 // Actions
 - (IBAction) showRiddle: (id)sender;
 
 // AVAudioPlayerDelegate
-@property (nonatomic, strong) AVAudioPlayer* audioPlayer;
+@property (strong, nonatomic) AVAudioPlayer* audioPlayer;
 - (void) audioPlayerDecodeErrorDidOccur: (AVAudioPlayer*) player error:(NSError *)error;
 
 // SceneTrackerDelegate

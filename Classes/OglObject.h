@@ -33,6 +33,8 @@ typedef struct {
     Vector3D* vertices;
     Vector3D* normals;
     Vector2D* texCoords;
+    
+    double scaleFactor;
 
     Material* material;
 }
@@ -45,6 +47,8 @@ typedef struct {
 @property (atomic) Vector3D* vertices;
 @property (atomic) Vector3D* normals;
 @property (atomic) Vector2D* texCoords;
+
+@property (atomic) double scaleFactor;
 
 @property (atomic, strong) Material* material;
 @end

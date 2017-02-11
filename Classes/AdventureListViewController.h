@@ -18,6 +18,9 @@
 @property (strong, nonatomic) IBOutlet UINavigationItem *adventuresTitel;
 
 // Data model
-@property (atomic, retain) NSArray* adventures;
+@property (strong, atomic) NSArray* adventures;
+
+// Segue methods (unwind)
+- (IBAction) gotoNextStory: (UIStoryboardSegue*) sender;
 
 @end

@@ -752,6 +752,8 @@ GLuint absIndex (int idx, unsigned int count) {
         else
             scaleFactor   = 1.0 / diff.z;
         
+        // Scale with object3D specific factor
+        scaleFactor = scaleFactor * object3D.objScaleFactor;
         
         // Close index ranges of last object
         if (objectCount > 0) {
@@ -778,10 +780,10 @@ GLuint absIndex (int idx, unsigned int count) {
                 
                 IndexGroup grp = faceIdxGroups[objFaceRange.fromIdx + fIdx];
                 
-                // vertices (translate & scale into a cube with root (0,0,0) & edge size 1.0
-                object.vertices[3*fIdx+0]  = scale3D(subtr3D(vertices[absIndex(grp.v1Idx, vertexCount)], center), scaleFactor);
-                object.vertices[3*fIdx+1]  = scale3D(subtr3D(vertices[absIndex(grp.v2Idx, vertexCount)], center), scaleFactor);
-                object.vertices[3*fIdx+2]  = scale3D(subtr3D(vertices[absIndex(grp.v3Idx, vertexCount)], center), scaleFactor);
+                // vertices (scale mesh with factor 'scaleFactor'
+                object.vertices[3*fIdx+0]  = scale3D(vertices[absIndex(grp.v1Idx, vertexCount)], scaleFactor);
+                object.vertices[3*fIdx+1]  = scale3D(vertices[absIndex(grp.v2Idx, vertexCount)], scaleFactor);
+                object.vertices[3*fIdx+2]  = scale3D(vertices[absIndex(grp.v3Idx, vertexCount)], scaleFactor);
                 
                 // normals
                 object.normals[3*fIdx+0]   = normals[absIndex(grp.n1Idx, normalCount)];
@@ -831,8 +833,10 @@ GLuint absIndex (int idx, unsigned int count) {
 }
 
 
-- (NSError*) parseObjFile: (File*) objFile {
+- (NSError*) parseObjFile: (File*) objFile ofObject: (Object3D*) obj3D {
     NSLog(@"ObjFileParser: parsing file %s...", [objFile.name UTF8String]);
+    
+    self->object3D = obj3D;
     
     // Read file content
     if (objFile.content == nil) {

@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import "File.h"
+#import "Object3D.h"
 #import "ObjFileScanner.h"
 #import "SyntaxError.h"
 #import "MtlFileParser.h"
@@ -45,6 +46,7 @@ typedef struct {
 
 @interface ObjFileParser : NSObject {
 	@protected
+    Object3D* object3D;
 	ObjFileScanner* scanner;
     MtlFileParser* mtlFileParser;
     
@@ -74,6 +76,6 @@ typedef struct {
 + (ObjFileParser*) newParser;
 
 // Parsing
-- (NSError*) parseObjFile: (File*) objFile;
+- (NSError*) parseObjFile: (File*) objFile ofObject: (Object3D*) object3D;
 
 @end
