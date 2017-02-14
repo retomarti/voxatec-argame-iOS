@@ -780,7 +780,7 @@ GLuint absIndex (int idx, unsigned int count) {
                 
                 IndexGroup grp = faceIdxGroups[objFaceRange.fromIdx + fIdx];
                 
-                // vertices (scale mesh with factor 'scaleFactor'
+                // vertices are scaled by factor 'scaleFactor'
                 object.vertices[3*fIdx+0]  = scale3D(vertices[absIndex(grp.v1Idx, vertexCount)], scaleFactor);
                 object.vertices[3*fIdx+1]  = scale3D(vertices[absIndex(grp.v2Idx, vertexCount)], scaleFactor);
                 object.vertices[3*fIdx+2]  = scale3D(vertices[absIndex(grp.v3Idx, vertexCount)], scaleFactor);

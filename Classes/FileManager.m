@@ -127,15 +127,13 @@ static FileManager* theManager = nil;
     NSAssert (file != nil && file.name != nil, @"FileManager.storeFile: file or file name is nil");
     NSAssert (file.content != nil, @"FileManager.storeFile: file content is nil");
     
-    NSArray*  dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* docsDir  = [dirPaths objectAtIndex: 0];
-    NSString* filePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: file.name]];
-        
+    NSString* filePath = [self pathOfFile: file];
+    
     // Store receivedData into a file
     NSError* error = nil;
-    [file.content writeToFile: filePath options: NSDataWritingAtomic error: &error];
+    BOOL success = [file.content writeToFile: filePath options: NSDataWritingAtomic error: &error];
         
-    if(error != nil) {
+    if(!success) {
         NSLog(@"FileManager.storeFile: %@", [error localizedDescription]);
         NSException* exception = [NSException
                                     exceptionWithName: error.domain
@@ -149,11 +147,51 @@ static FileManager* theManager = nil;
 
 
 - (void) deleteFile: (File*) file {
+    
+    // Delete file in document directory
+    NSString* filePath = [self pathOfFile: file];
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    
+    NSError* error;
+    BOOL success = [fileManager removeItemAtPath: filePath error: &error];
+    if (!success) {
+        NSLog(@"FileManager: could not delete file %@", [error localizedDescription]);
+        NSException* exception = [NSException
+                                  exceptionWithName: error.domain
+                                  reason: error.localizedFailureReason
+                                  userInfo: error.userInfo];
+        @throw exception;
+    }
+    
     [self removeFile: file];
+    
 }
 
 
 - (void) deleteAllFiles {
+    
+    // Delete files first
+    for (NSString* key in fileList) {
+
+        File* file = (File*) fileList[key];
+        
+        // Delete file in document directory
+        NSString* filePath = [self pathOfFile: file];
+        NSFileManager* fileManager = [NSFileManager defaultManager];
+        
+        NSError* error;
+        BOOL success = [fileManager removeItemAtPath: filePath error: &error];
+        if (!success) {
+            NSLog(@"FileManager: could not delete file %@", [error localizedDescription]);
+            NSException* exception = [NSException
+                                      exceptionWithName: error.domain
+                                      reason: error.localizedFailureReason
+                                      userInfo: error.userInfo];
+            @throw exception;
+        }
+    
+    }
+    
     [self removeAll];
 }
 
