@@ -8,10 +8,13 @@
 //----------------------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
-
+#import "Adventure.h"
 
 
 @interface AdventureListViewController : UITableViewController <UITableViewDelegate> {
+    @private
+    NSMutableArray* infoButtons;
+    Adventure* selectedAdventure;
 }
 
 // Outlets

@@ -30,6 +30,9 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
+    // Init button list
+    infoButtons = [NSMutableArray new];
+    
     // Init outlets
     NSString* advTitleText = NSLocalizedString(@"ADV_LIST_VIEW_TITLE", @"Titel of AdventureListView");
     adventuresTitel.title = advTitleText;
@@ -88,17 +91,6 @@
 }
 
 
-// Actions ---------------------------------------------------------------------------------------------
-
-- (void) infoButtonPressed: (id) sender {
-    
-    [self performSegueWithIdentifier: @"AdventureDetailView" sender: self];
-}
-
-
-
-// UITableViewDelegate ---------------------------------------------------------------------------------
-
 - (CGFloat) tableView: (UITableView*) tableView heightForHeaderInSection: (NSInteger) section {
     return kHeaderViewHeight;
 }
@@ -135,7 +127,8 @@
                                        infoButton.frame.size.height);
         infoButton.frame = buttonRect;
         infoButton.tintColor = [UIColor whiteColor];
-        [infoButton addTarget: self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [infoButton addTarget: self action:@selector(infoButtonPressed:) forControlEvents: UIControlEventTouchUpInside];
+        [infoButtons addObject: infoButton];
         [headerView addSubview: infoButton];
     }
     
@@ -148,6 +141,21 @@
     [self performSegueWithIdentifier: @"StoryView" sender: self];
 }
 
+
+// Actions ---------------------------------------------------------------------------------------------
+
+- (void) infoButtonPressed: (id) sender {
+    NSUInteger advIdx = [infoButtons indexOfObject: sender];
+    
+    if (advIdx == NSNotFound) {
+        selectedAdventure = nil;
+        return; // do nothing
+    }
+    else {
+        selectedAdventure = [adventures objectAtIndex: advIdx];
+        [self performSegueWithIdentifier: @"AdventureDetailView" sender: self];
+    }
+}
 
 
 // Segue methods ----------------------------------------------------------------------------------------
@@ -179,18 +187,14 @@
     else if ([[segue identifier] isEqualToString: @"AdventureDetailView"]) {
         
         UIViewController* destController = [segue destinationViewController];
-        if ([destController isKindOfClass: [AdventureDetailViewController class]]) {
-            
-            // Retrieve selected row
-            NSIndexPath* selPath = [self.tableView indexPathForSelectedRow];
-            NSInteger section = [selPath section];
-            Adventure* adventure = [adventures objectAtIndex: section];
+        if ([destController isKindOfClass: [AdventureDetailViewController class]] &&
+             selectedAdventure != nil) {
             
             // Get reference to the destination view controller
             AdventureDetailViewController* advDetailViewController = (AdventureDetailViewController*) destController;
             
             // Pass the selected story to destination controller
-            advDetailViewController.adventure = adventure;
+            advDetailViewController.adventure = selectedAdventure;
         }
     }
 }
