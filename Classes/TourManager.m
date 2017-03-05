@@ -7,9 +7,10 @@
 //----------------------------------------------------------------------------------------
 
 #import "TourManager.h"
+#import "City.h"
+#import "Cache.h"
 #import "Story.h"
 #import "Scene.h"
-#import "Cache.h"
 #import "Riddle.h"
 #import "File.h"
 #import "FileManager.h"
@@ -121,65 +122,74 @@ static TourManager* theManager = nil;
         // Read parsedObject into adventures
         adventures = [NSMutableArray new];
         
-        NSArray* advList = parsedObject;
+        NSArray* cityList = parsedObject;
         
-        for (NSDictionary* advDict in advList) {
+        for (NSDictionary* cityDict in cityList) {
             
-            // Adventure
-            Adventure* adv = [Adventure newAdventure];
-            adv.id = [advDict valueForKey: @"id"];
-            adv.name = [[advDict valueForKey: @"name"] decodeHTMLCharacterEntities];
-            adv.text = [[advDict valueForKey: @"text"] decodeHTMLCharacterEntities];
-            [adventures addObject: adv];
+            // City
+            City* city = [City new];
+            city.id = [cityDict valueForKey: @"id"];
+            city.name = [[cityDict valueForKey: @"name"] decodeHTMLCharacterEntities];
+            NSArray* advList = [cityDict valueForKey: @"adventureList"];
             
-            // Stories
-            adv.stories = [NSMutableArray new];
-            NSArray* storyList = [advDict valueForKey: @"storyList"];
-            
-            for (NSDictionary* storyDict in storyList) {
-                // Story
-                Story* story = [Story newStory];
-                story.id = [storyDict valueForKey: @"id"];
-                story.name = [[storyDict valueForKey: @"name"] decodeHTMLCharacterEntities];
-                story.text = [[storyDict valueForKey: @"text"] decodeHTMLCharacterEntities];
-                story.scenes = [NSMutableArray new];
-                [adv.stories addObject: story];
-
-                // Scenes
-                NSArray* sceneList = [storyDict valueForKey: @"sceneList"];
+            for (NSDictionary* advDict in advList) {
                 
-                for (NSDictionary* sceneDict in sceneList) {
-                    
-                    // Scene
-                    Scene* scene = [Scene new];
-                    scene.id = [sceneDict valueForKey:@"id"];
-                    scene.name = [[sceneDict valueForKey:@"name"] decodeHTMLCharacterEntities];
-                    scene.seqNr = [[sceneDict valueForKey: @"seqNr"] intValue];
-                    scene.text = [[sceneDict valueForKey:@"text"] decodeHTMLCharacterEntities];
-                    Vector3D lightLoc = {0.0, 0.0, 1.0};
-                    scene.light     = [Light newPointLightAt: lightLoc];
+                // Adventure
+                Adventure* adv = [Adventure newAdventure];
+                adv.id = [advDict valueForKey: @"id"];
+                adv.name = [[advDict valueForKey: @"name"] decodeHTMLCharacterEntities];
+                adv.text = [[advDict valueForKey: @"text"] decodeHTMLCharacterEntities];
+                [adventures addObject: adv];
+                
+                // Stories
+                adv.stories = [NSMutableArray new];
+                NSArray* storyList = [advDict valueForKey: @"storyList"];
+                
+                for (NSDictionary* storyDict in storyList) {
+                    // Story
+                    Story* story = [Story newStory];
+                    story.id = [storyDict valueForKey: @"id"];
+                    story.name = [[storyDict valueForKey: @"name"] decodeHTMLCharacterEntities];
+                    story.text = [[storyDict valueForKey: @"text"] decodeHTMLCharacterEntities];
+                    story.scenes = [NSMutableArray new];
+                    [adv.stories addObject: story];
 
-                    [story.scenes addObject: scene];
+                    // Scenes
+                    NSArray* sceneList = [storyDict valueForKey: @"sceneList"];
                     
-                    // Cache
-                    NSDictionary* cacheDict = [sceneDict valueForKey: @"cache"];
-                    scene.cache = [self loadCacheFromDict: cacheDict];
-                    
-                    // Object3D
-                    NSDictionary* obj3DDict = [sceneDict valueForKey: @"object3D"];
-                    Object3D* obj3D = [Object3D new];
-                    obj3D.id = [obj3DDict valueForKey: @"id"];
-                    obj3D.name = [[obj3DDict valueForKey: @"name"] decodeHTMLCharacterEntities];
-                    obj3D.text = [[obj3DDict valueForKey: @"tex"] decodeHTMLCharacterEntities];
-                    scene.object3D = obj3D;
-                    
-                    // Riddle
-                    NSDictionary* riddleDict = [sceneDict valueForKey: @"riddle"];
-                    Riddle* riddle = [Riddle new];
-                    riddle.id = [riddleDict valueForKey: @"id"];
-                    riddle.challenge = [[riddleDict valueForKey: @"challengeText"] decodeHTMLCharacterEntities];
-                    riddle.response = [[riddleDict valueForKey: @"responseText"] decodeHTMLCharacterEntities];
-                    scene.riddle = riddle;
+                    for (NSDictionary* sceneDict in sceneList) {
+                        
+                        // Scene
+                        Scene* scene = [Scene new];
+                        scene.id = [sceneDict valueForKey:@"id"];
+                        scene.name = [[sceneDict valueForKey:@"name"] decodeHTMLCharacterEntities];
+                        scene.seqNr = [[sceneDict valueForKey: @"seqNr"] intValue];
+                        scene.text = [[sceneDict valueForKey:@"text"] decodeHTMLCharacterEntities];
+                        Vector3D lightLoc = {0.0, 0.0, 1.0};
+                        scene.light     = [Light newPointLightAt: lightLoc];
+
+                        [story.scenes addObject: scene];
+                        
+                        // Cache
+                        NSDictionary* cacheDict = [sceneDict valueForKey: @"cache"];
+                        scene.cache = [self loadCacheFromDict: cacheDict];
+                        
+                        // Object3D
+                        NSDictionary* obj3DDict = [sceneDict valueForKey: @"object3D"];
+                        Object3D* obj3D = [Object3D new];
+                        obj3D.id = [obj3DDict valueForKey: @"id"];
+                        obj3D.name = [[obj3DDict valueForKey: @"name"] decodeHTMLCharacterEntities];
+                        obj3D.text = [[obj3DDict valueForKey: @"tex"] decodeHTMLCharacterEntities];
+                        scene.object3D = obj3D;
+                        
+                        // Riddle
+                        NSDictionary* riddleDict = [sceneDict valueForKey: @"riddle"];
+                        Riddle* riddle = [Riddle new];
+                        riddle.id = [riddleDict valueForKey: @"id"];
+                        riddle.challenge = [[riddleDict valueForKey: @"challengeText"] decodeHTMLCharacterEntities];
+                        riddle.response = [[riddleDict valueForKey: @"responseText"] decodeHTMLCharacterEntities];
+                        scene.riddle = riddle;
+                    }
                 }
             }
         }
@@ -196,9 +206,14 @@ static TourManager* theManager = nil;
 }
 
 
-- (void) loadNearbyAdventures {
+- (void) loadNearbyAdventures: (CLLocation*) userLocation {
     
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@", kHostAddress, @"adventure-caches"];
+    CLLocationCoordinate2D coord = [userLocation coordinate];
+    NSNumber* gpsLat = [NSNumber numberWithDouble: coord.latitude];
+    NSNumber* gpsLng = [NSNumber numberWithDouble: coord.longitude];
+    
+    NSString* urlString = [NSString stringWithFormat: @"%@/nearby-adventure-caches?gpsLong=%@&gpsLat=%@",
+                                                      kHostAddress, [gpsLng stringValue], [gpsLat stringValue]];
     
     // Create task to load nearbyAdventures from server
     NSURLSession *session = [NSURLSession sharedSession];

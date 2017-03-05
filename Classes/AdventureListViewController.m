@@ -22,7 +22,7 @@
 
 @implementation AdventureListViewController
 
-@synthesize adventuresTitel, adventures;
+@synthesize adventuresTitel, adventures, userLocation;
 
 
 // View initialisation
@@ -32,7 +32,7 @@
     
     // Init button list
     infoButtons = [NSMutableArray new];
-    
+
     // Init outlets
     NSString* advTitleText = NSLocalizedString(@"ADV_LIST_VIEW_TITLE", @"Titel of AdventureListView");
     adventuresTitel.title = advTitleText;
@@ -42,6 +42,51 @@
 
 
 // UITableViewSource delegate methods --------------------------------------------------------------
+
+- (CGFloat) tableView: (UITableView*) tableView heightForHeaderInSection: (NSInteger) section {
+    return kHeaderViewHeight;
+}
+
+
+- (UIView*) tableView: (UITableView*) tableView viewForHeaderInSection: (NSInteger) section {
+    UIView* headerView = nil;
+    
+    // Title
+    if (adventures != nil && section < [adventures count]) {
+        Adventure* adv = [adventures objectAtIndex: section];
+        
+        // Header view
+        CGRect frameRect = tableView.frame;
+        CGRect viewRect = CGRectMake(0, 0, frameRect.size.width, kHeaderViewHeight);
+        headerView = [[UIView alloc] initWithFrame: viewRect];
+        headerView.backgroundColor = [UIColor colorWithRed: 0.435 green: 0.494 blue: 0.578 alpha: 0.6];
+        
+        // Title: adventure name
+        CGRect titleRect = CGRectMake(kHeaderViewInset,
+                                      0,
+                                      frameRect.size.width - kHeaderViewInset,
+                                      kHeaderViewHeight);
+        UILabel* title = [[UILabel alloc] initWithFrame: titleRect];
+        title.text = adv.name;
+        title.textColor = [UIColor whiteColor];
+        [headerView addSubview: title];
+        
+        // Info button
+        UIButton* infoButton = [UIButton buttonWithType: UIButtonTypeInfoDark];
+        CGRect buttonRect = CGRectMake(frameRect.size.width - infoButton.frame.size.width - kHeaderViewInset,
+                                       kHeaderViewInset,
+                                       infoButton.frame.size.width,
+                                       infoButton.frame.size.height);
+        infoButton.frame = buttonRect;
+        infoButton.tintColor = [UIColor whiteColor];
+        [infoButton addTarget: self action:@selector(infoButtonPressed:) forControlEvents: UIControlEventTouchUpInside];
+        [infoButtons addObject: infoButton];
+        [headerView addSubview: infoButton];
+    }
+    
+    return headerView;
+}
+
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView {
     
@@ -67,10 +112,20 @@
 }
 
 
+- (float) distOfUserLocationToStory: (Story*) story {
+    Scene* firstScene = (Scene*) [[story scenes] firstObject];
+    
+    CLLocationCoordinate2D gpsCoords = firstScene.cache.gpsCoordinates;
+    CLLocation* advStartLocation = [[CLLocation alloc] initWithLatitude: gpsCoords.latitude longitude: gpsCoords.longitude];
+    
+    return [userLocation distanceFromLocation: advStartLocation];
+}
+
+
 - (UITableViewCell*) tableView: (UITableView*) tableView cellForRowAtIndexPath: (NSIndexPath*) indexPath {
     static NSString* CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: CellIdentifier];
     }
@@ -82,57 +137,18 @@
     Adventure* adv = [adventures objectAtIndex: section];
     Story* story = [adv.stories objectAtIndex: row];
     
+    NSString* priceText = NSLocalizedString(@"ADV_PRICE_VALUE", @"Preis & Currency");
+    NSString* distText = NSLocalizedString(@"ADV_DIST_TO_USER_LOCATION", @"Distance to user location");
+    CLLocationDistance userDist = [self distOfUserLocationToStory: story];
+    NSString* text = [[[NSString stringWithFormat: priceText, story.price]
+                          stringByAppendingString: @", "]
+                          stringByAppendingString: [NSString stringWithFormat: distText, userDist / 1000.0]];
+    
     cell.textLabel.text = [story name];
-    NSString* price = NSLocalizedString(@"ADV_PRICE_VALUE", @"Preis & Currency");
-    cell.detailTextLabel.text = [NSString stringWithFormat: price, story.price];
+    cell.detailTextLabel.text = text;
     cell.detailTextLabel.textColor = [UIColor grayColor];
     
     return cell;
-}
-
-
-- (CGFloat) tableView: (UITableView*) tableView heightForHeaderInSection: (NSInteger) section {
-    return kHeaderViewHeight;
-}
-
-
-- (UIView*) tableView: (UITableView*) tableView viewForHeaderInSection: (NSInteger) section {
-    UIView* headerView = nil;
-    
-    // Title
-    if (adventures != nil && section < [adventures count]) {
-        Adventure* adv = [adventures objectAtIndex: section];
-        
-        // Header view
-        CGRect frameRect = tableView.frame;
-        CGRect viewRect = CGRectMake(0, 0, frameRect.size.width, kHeaderViewHeight);
-        headerView = [[UIView alloc] initWithFrame: viewRect];
-        headerView.backgroundColor = [UIColor colorWithRed: 0.435 green: 0.494 blue: 0.578 alpha: 0.6];
-        
-        // Title
-        CGRect titleRect = CGRectMake(kHeaderViewInset,
-                                      0,
-                                      frameRect.size.width - kHeaderViewInset,
-                                      kHeaderViewHeight);
-        UILabel* title = [[UILabel alloc] initWithFrame: titleRect];
-        title.text = adv.name;
-        title.textColor = [UIColor whiteColor];
-        [headerView addSubview: title];
-        
-        // Info button
-        UIButton* infoButton = [UIButton buttonWithType: UIButtonTypeInfoDark];
-        CGRect buttonRect = CGRectMake(frameRect.size.width - infoButton.frame.size.width - kHeaderViewInset,
-                                       kHeaderViewInset,
-                                       infoButton.frame.size.width,
-                                       infoButton.frame.size.height);
-        infoButton.frame = buttonRect;
-        infoButton.tintColor = [UIColor whiteColor];
-        [infoButton addTarget: self action:@selector(infoButtonPressed:) forControlEvents: UIControlEventTouchUpInside];
-        [infoButtons addObject: infoButton];
-        [headerView addSubview: infoButton];
-    }
-    
-    return headerView;
 }
 
 

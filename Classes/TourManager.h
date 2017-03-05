@@ -49,7 +49,7 @@
 + (TourManager*) theManager;
 
 // Tour workflow
-- (void) loadNearbyAdventures;
+- (void) loadNearbyAdventures: (CLLocation*) userLocation;
 - (void) startStory: (Story*) story;
 - (void) gotoNextScene: (Scene*) currentScene;
 - (void) prepareSceneForSearch: (Scene*) scene;

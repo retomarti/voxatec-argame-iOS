@@ -108,6 +108,7 @@
 		D21B08811A1B71190041ECF3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21B08801A1B71190041ECF3 /* CoreMedia.framework */; };
 		D28C51241A8B5B8C000B6C9A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28C51231A8B5B8C000B6C9A /* MediaPlayer.framework */; };
 		D28C51261A8B5BC9000B6C9A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */; };
+		DA7F7E6E1E6B220B00155C3B /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7F7E6D1E6B220B00155C3B /* City.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -265,6 +266,8 @@
 		D21B08801A1B71190041ECF3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D28C51231A8B5B8C000B6C9A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DA7F7E6C1E6B220B00155C3B /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = SOURCE_ROOT; };
+		DA7F7E6D1E6B220B00155C3B /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +415,8 @@
 				CE363D021C4F681700828DC9 /* Story.m */,
 				CEFD4A171C4C046800CB0B27 /* Scene.h */,
 				CEFD4A181C4C046800CB0B27 /* Scene.m */,
+				DA7F7E6C1E6B220B00155C3B /* City.h */,
+				DA7F7E6D1E6B220B00155C3B /* City.m */,
 				CE5363801CE60A8E000BAC25 /* Cache.h */,
 				CE5363811CE60C5A000BAC25 /* Cache.m */,
 				CEB247021C633B5300BA9A3A /* Riddle.h */,
@@ -700,6 +705,7 @@
 				CEFD4A541C4C0AA800CB0B27 /* SymTable.m in Sources */,
 				CE53637F1CE5FD58000BAC25 /* NamedObject.m in Sources */,
 				CEFD4A421C4C0A2E00CB0B27 /* MtlFileParser.m in Sources */,
+				DA7F7E6E1E6B220B00155C3B /* City.m in Sources */,
 				CEAFEEC61E3F39700089749B /* ARGameViewController.m in Sources */,
 				CEFD4A341C4C082600CB0B27 /* LightShader.mm in Sources */,
 				CED6E7C91E2E55640037991E /* NSString+HTML.m in Sources */,

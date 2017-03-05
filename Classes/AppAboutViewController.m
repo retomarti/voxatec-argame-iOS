@@ -16,7 +16,7 @@
 @implementation AppAboutViewController
 
 
-@synthesize adventures, augmentedRealityTitleLabel, findNearbyAdventuresButton, activityIndicator;
+@synthesize adventures, augmentedRealityTitleLabel, findNearbyAdventuresButton, activityIndicator, userLocation;
 
 
 // Initialisation -----------------------------------------------------------------------------------------
@@ -44,6 +44,11 @@
     [findNearbyAdventuresButton.layer setBorderWidth: 0.5f];
     [findNearbyAdventuresButton.layer setBorderColor: [[UIColor grayColor] CGColor]];
     findNearbyAdventuresButton.enabled = YES;
+    
+    // Setup locationManager
+    locationManager = nil;
+    self.userLocation = nil;
+    shouldLoadAdventures = NO;
 }
 
 
@@ -76,10 +81,11 @@
     // Turn-on network indicator
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
     
-    // Loud tour infos
-    TourManager* theManager = [TourManager theManager];
-    theManager.delegate = self;
-    [theManager loadNearbyAdventures];
+    // Enable locationManager
+    locationManager = [CLLocationManager new];
+    locationManager.delegate = self;
+
+    shouldLoadAdventures = YES;
 }
 
 
@@ -128,10 +134,61 @@
 }
 
 
+// CLLocationManagerDelegates ------------------------------------------------------------------
+
+- (void) locationManager: (CLLocationManager*) manager didChangeAuthorizationStatus: (CLAuthorizationStatus) status {
+    
+    if (status == kCLAuthorizationStatusAuthorizedAlways ||
+        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        
+        [manager startUpdatingLocation];
+    }
+}
+
+
+- (void) showAlertWithTitle: (NSString*) title errorMessage: (NSString*) message {
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle: title
+                                                                   message: message
+                                                            preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle: @"OK" style: UIAlertActionStyleDefault
+                                                          handler: ^(UIAlertAction * action) {}];
+    
+    [alert addAction: defaultAction];
+    [self presentViewController: alert animated: YES completion: nil];
+    
+}
+
+
+- (void) locationManager: (CLLocationManager*) manager didFailWithError: (NSError*) error {
+    
+    // Show error message to user
+    NSLog(@"AppAboutViewController: locationManager didFailWithError: %@", error);
+    NSString* locationErrorTitel = NSLocalizedString(@"CACHE_LOCATION_FAILURE_TITLE", @"Location failure message title");
+    NSString* locationErrorMsg = NSLocalizedString(@"CACHE_LOCATION_FAILURE_MSG", @"Location failure message");
+    
+    [self showAlertWithTitle: locationErrorTitel errorMessage: locationErrorMsg];
+}
+
+
+- (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations {
+    
+    self.userLocation = [locations lastObject];
+    
+    // Load adventures?
+    if (shouldLoadAdventures) {
+        TourManager* theManager = [TourManager theManager];
+        theManager.delegate = self;
+        [theManager loadNearbyAdventures: self.userLocation];
+        shouldLoadAdventures = NO;
+    }
+}
+
+
 // Segue methods --------------------------------------------------------------------------------------------
 
-- (void) prepareForSegue: (UIStoryboardSegue*) segue sender:(id) sender
-{
+- (void) prepareForSegue: (UIStoryboardSegue*) segue sender:(id) sender {
     // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString: @"AdventureListView"]) {
         
@@ -140,6 +197,7 @@
 
             // Get reference to the destination view controller
             AdventureListViewController* advListViewController = (AdventureListViewController*) destController;
+            advListViewController.userLocation = self.userLocation;
         
             // Pass adventures to destination controller
             advListViewController.adventures = adventures;

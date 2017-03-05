@@ -9,19 +9,22 @@
 
 #import <UIKit/UIKit.h>
 #import "Adventure.h"
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface AdventureListViewController : UITableViewController <UITableViewDelegate> {
     @private
     NSMutableArray* infoButtons;
     Adventure* selectedAdventure;
+    CLLocationManager* locationManager;
 }
 
 // Outlets
-@property (strong, nonatomic) IBOutlet UINavigationItem *adventuresTitel;
+@property (strong, nonatomic) IBOutlet UINavigationItem* adventuresTitel;
 
 // Data model
 @property (strong, atomic) NSArray* adventures;
+@property (strong, nonatomic) CLLocation* userLocation;
 
 // Segue methods (unwind)
 - (IBAction) gotoNextStory: (UIStoryboardSegue*) sender;

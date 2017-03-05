@@ -12,11 +12,15 @@
 #import "TourManager.h"
 
 
-@interface AppAboutViewController : ARGameViewController <TourManagerDelegate> {
-    
+@interface AppAboutViewController : ARGameViewController <TourManagerDelegate, CLLocationManagerDelegate> {
+    @protected
+    CLLocationManager* locationManager;
+    BOOL shouldLoadAdventures;
 }
 
+// Data model
 @property (atomic, retain) NSArray* adventures;
+@property (strong, nonatomic) CLLocation* userLocation;
 
 // Outlets
 @property (strong, nonatomic) IBOutlet UINavigationItem* augmentedRealityTitleLabel;

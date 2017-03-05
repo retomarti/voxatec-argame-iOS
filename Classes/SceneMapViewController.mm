@@ -29,7 +29,7 @@
     self = [super init];
     
     if (self != nil) {
-        locationManager = [[CLLocationManager alloc] init];
+        locationManager = [CLLocationManager new];
         userLocation = nil;
     }
     
@@ -60,7 +60,7 @@
     
     // Let view show user location
     if (locationManager == nil) {
-        locationManager = [[CLLocationManager alloc] init];
+        locationManager = [CLLocationManager new];
         locationManager.delegate = self;
     }
     
@@ -150,9 +150,9 @@
 }
 
 
-- (void) zoomToLocationAndCache {
+- (void) zoomToUserLocationAndCache: (CLLocation*) newUserLocation {
     // Zoom map view to include user location and annotation (cache)
-    CLLocationCoordinate2D userLoc = self.userLocation.coordinate;
+    CLLocationCoordinate2D userLoc = newUserLocation.coordinate;
     CLLocationCoordinate2D annotationLoc = scene.cache.coordinate;
     
     // Make map points
@@ -175,14 +175,15 @@
 }
 
 
--(void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations {
+- (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations {
+    
+    CLLocation* newUserLocation = [locations lastObject];
     
     if (self.userLocation == nil) {
-        self.userLocation = [locations lastObject];
-
-        [self zoomToLocationAndCache];
+        [self zoomToUserLocationAndCache: newUserLocation];
     }
 
+    self.userLocation = newUserLocation;
 }
 
 
@@ -216,7 +217,7 @@
 
 - (IBAction) focusOnCache: (id) sender {
     
-    [self zoomToLocationAndCache];
+    [self zoomToUserLocationAndCache: self.userLocation];
 }
 
 
