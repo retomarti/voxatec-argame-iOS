@@ -108,6 +108,8 @@
 		D21B08811A1B71190041ECF3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21B08801A1B71190041ECF3 /* CoreMedia.framework */; };
 		D28C51241A8B5B8C000B6C9A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28C51231A8B5B8C000B6C9A /* MediaPlayer.framework */; };
 		D28C51261A8B5BC9000B6C9A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */; };
+		DA0A88741EA360550048E662 /* GameStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A88731EA360550048E662 /* GameStatus.m */; };
+		DA0A88761EA36A7F0048E662 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A88751EA36A7F0048E662 /* CoreLocation.framework */; };
 		DA7F7E6E1E6B220B00155C3B /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7F7E6D1E6B220B00155C3B /* City.m */; };
 		DAD8D3431E6DDD5F0027897E /* 816-satellite-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3421E6DDD5F0027897E /* 816-satellite-toolbar@3x.png */; };
 		DAD8D3451E6DDD830027897E /* 816-satellite-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3441E6DDD830027897E /* 816-satellite-toolbar-selected@3x.png */; };
@@ -127,6 +129,7 @@
 		DAD8D3611E6DE3B70027897E /* 734-chat-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3601E6DE3B70027897E /* 734-chat-toolbar-selected@3x.png */; };
 		DAD8D3641E6DE3C20027897E /* 734-chat-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3621E6DE3C20027897E /* 734-chat-toolbar@2x.png */; };
 		DAD8D3651E6DE3C20027897E /* 734-chat-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3631E6DE3C20027897E /* 734-chat-toolbar@3x.png */; };
+		DAD8D3671E6DFD830027897E /* 869-pin-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3661E6DFD830027897E /* 869-pin-toolbar-selected@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -284,6 +287,9 @@
 		D21B08801A1B71190041ECF3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D28C51231A8B5B8C000B6C9A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DA0A88721EA360550048E662 /* GameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStatus.h; path = Classes/GameStatus.h; sourceTree = SOURCE_ROOT; };
+		DA0A88731EA360550048E662 /* GameStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameStatus.m; path = Classes/GameStatus.m; sourceTree = SOURCE_ROOT; };
+		DA0A88751EA36A7F0048E662 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DA7F7E6C1E6B220B00155C3B /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = SOURCE_ROOT; };
 		DA7F7E6D1E6B220B00155C3B /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = SOURCE_ROOT; };
 		DAD8D3421E6DDD5F0027897E /* 816-satellite-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "816-satellite-toolbar@3x.png"; path = "Assets/816-satellite-toolbar@3x.png"; sourceTree = SOURCE_ROOT; };
@@ -304,6 +310,7 @@
 		DAD8D3601E6DE3B70027897E /* 734-chat-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "734-chat-toolbar-selected@3x.png"; path = "Assets/734-chat-toolbar-selected@3x.png"; sourceTree = SOURCE_ROOT; };
 		DAD8D3621E6DE3C20027897E /* 734-chat-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "734-chat-toolbar@2x.png"; path = "Assets/734-chat-toolbar@2x.png"; sourceTree = SOURCE_ROOT; };
 		DAD8D3631E6DE3C20027897E /* 734-chat-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "734-chat-toolbar@3x.png"; path = "Assets/734-chat-toolbar@3x.png"; sourceTree = SOURCE_ROOT; };
+		DAD8D3661E6DFD830027897E /* 869-pin-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "869-pin-toolbar-selected@2x.png"; path = "Assets/869-pin-toolbar-selected@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0A88761EA36A7F0048E662 /* CoreLocation.framework in Frameworks */,
 				D28C51261A8B5BC9000B6C9A /* AudioToolbox.framework in Frameworks */,
 				CEC9D6E31C40FCC600CBB3E5 /* libVuforia.a in Frameworks */,
 				D21B08711A1B6AD60041ECF3 /* AVFoundation.framework in Frameworks */,
@@ -438,11 +446,13 @@
 			name = Shaders;
 			sourceTree = "<group>";
 		};
-		CEC534911C43FB1F0072AD18 /* Story & Scene */ = {
+		CEC534911C43FB1F0072AD18 /* Adventure */ = {
 			isa = PBXGroup;
 			children = (
 				CE53637B1CE5FBDB000BAC25 /* ARObject.h */,
 				CE5363791CE5FB1C000BAC25 /* ARObject.m */,
+				DA0A88721EA360550048E662 /* GameStatus.h */,
+				DA0A88731EA360550048E662 /* GameStatus.m */,
 				CE53637D1CE5FCE5000BAC25 /* NamedObject.h */,
 				CE53637E1CE5FD58000BAC25 /* NamedObject.m */,
 				CE363CFE1C4F669000828DC9 /* Adventure.h */,
@@ -464,7 +474,7 @@
 				CEFD4A1D1C4C048500CB0B27 /* TourManager.h */,
 				CEFD4A1E1C4C048500CB0B27 /* TourManager.m */,
 			);
-			name = "Story & Scene";
+			name = Adventure;
 			sourceTree = "<group>";
 		};
 		CED6E7C61E2E550F0037991E /* Utilities */ = {
@@ -527,7 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				CED6E7C61E2E550F0037991E /* Utilities */,
-				CEC534911C43FB1F0072AD18 /* Story & Scene */,
+				CEC534911C43FB1F0072AD18 /* Adventure */,
 				CEC534181C4136EF0072AD18 /* 3D Model */,
 				CEC534191C4136F70072AD18 /* ObjFileParser */,
 				CEC534501C414AAE0072AD18 /* Shaders */,
@@ -582,6 +592,7 @@
 				CE7BDC921E3CF65D0011EE9C /* 869-pin-toolbar.png */,
 				DAD8D35A1E6DE3010027897E /* 869-pin-toolbar@2x.png */,
 				DAD8D35E1E6DE3440027897E /* 869-pin-toolbar@3x.png */,
+				DAD8D3661E6DFD830027897E /* 869-pin-toolbar-selected@2x.png */,
 				DAD8D35C1E6DE3320027897E /* 869-pin-toolbar-selected@3x.png */,
 				CE7EBC241E38A11F009DAF90 /* 852-map-toolbar.png */,
 				DAD8D3561E6DE2C60027897E /* 852-map-toolbar@2x.png */,
@@ -604,6 +615,7 @@
 		D21B087B1A1B6C710041ECF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA0A88751EA36A7F0048E662 /* CoreLocation.framework */,
 				CEAFEECA1E3FE9120089749B /* MapKit.framework */,
 				CEC9D6E21C40FCC600CBB3E5 /* libVuforia.a */,
 				D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */,
@@ -736,6 +748,7 @@
 				CEFD4A631C4C0C2D00CB0B27 /* DepthMapShader.fsh in Resources */,
 				DAD8D3611E6DE3B70027897E /* 734-chat-toolbar-selected@3x.png in Resources */,
 				CEFCC86E1E4212BE008BAD7F /* IT.png in Resources */,
+				DAD8D3671E6DFD830027897E /* 869-pin-toolbar-selected@2x.png in Resources */,
 				CE7BDC931E3CF65D0011EE9C /* 869-pin-toolbar.png in Resources */,
 				DAD8D3641E6DE3C20027897E /* 734-chat-toolbar@2x.png in Resources */,
 				DAD8D3651E6DE3C20027897E /* 734-chat-toolbar@3x.png in Resources */,
@@ -773,6 +786,7 @@
 				CEB247041C633BFE00BA9A3A /* Riddle.m in Sources */,
 				CEFCC8651E41FFDC008BAD7F /* ARQuestAppDelegate.m in Sources */,
 				CEFD4A2E1C4C05C400CB0B27 /* Object3D.m in Sources */,
+				DA0A88741EA360550048E662 /* GameStatus.m in Sources */,
 				CE363D121C539DEC00828DC9 /* SceneMapViewController.mm in Sources */,
 				CEFD4A541C4C0AA800CB0B27 /* SymTable.m in Sources */,
 				CE53637F1CE5FD58000BAC25 /* NamedObject.m in Sources */,
@@ -924,7 +938,7 @@
 					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voxatec.AR-Quest";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voxatec.arquest;
 				PRODUCT_NAME = "AR-Quest";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -951,7 +965,7 @@
 					"Vuforia/vuforia-sdk-ios-5-0-10/build/lib/arm",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voxatec.AR-Quest";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voxatec.arquest;
 				PRODUCT_NAME = "AR-Quest";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

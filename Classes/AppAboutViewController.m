@@ -82,8 +82,26 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
     
     // Enable locationManager
+    /*
+    CLAuthorizationStatus locAuthorisationStatus = [CLLocationManager authorizationStatus];
+    BOOL locServiceEnabled = [CLLocationManager locationServicesEnabled];
+    
+    if (locAuthorisationStatus == kCLAuthorizationStatusRestricted ||
+        locAuthorisationStatus == kCLAuthorizationStatusDenied ||
+        !locServiceEnabled) {
+        // Inform user, we can't start app
+        [self showAlertWithTitle: @"Locaton error" errorMessage: @"Could not start loation servivce"];
+    }
+    */
+    
+    // Init location manager
     locationManager = [CLLocationManager new];
     locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
 
     shouldLoadAdventures = YES;
 }
@@ -172,7 +190,7 @@
 }
 
 
-- (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations {
+- (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray<CLLocation*>*) locations {
     
     self.userLocation = [locations lastObject];
     

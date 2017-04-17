@@ -15,7 +15,7 @@
 #import "File.h"
 
 
-@interface Scene : NamedObject {
+@interface Scene : NamedObject <NSCoding> {
 }
 // Scene
 @property int seqNr;

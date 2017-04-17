@@ -11,6 +11,7 @@
 #import "Story.h"
 #import "Scene.h"
 #import "ObjFileParser.h"
+#import "GameStatus.h"
 
 
 // Forward declaration
@@ -32,12 +33,12 @@
 
 
 @interface TourManager : NSObject {
-    @protected
+@protected
     NSMutableArray* adventures;
     Adventure* theAdventure;    // Current adventure
     Story* theStory;            // Current story
     Scene* theScene;            // Current scene
-    
+    GameStatus* gameStatus;     // Persisted game status
     ObjFileParser* parser;      // obj file parser
     NSMapTable* fileMapTable;   // maps request-URL to file objects
 }
@@ -51,8 +52,14 @@
 // Tour workflow
 - (void) loadNearbyAdventures: (CLLocation*) userLocation;
 - (void) startStory: (Story*) story;
-- (void) gotoNextScene: (Scene*) currentScene;
+- (void) continueStory: (Story*) story;
+- (Scene*) gotoFirstScene;
+- (Scene*) gotoNextScene: (Scene*) currentScene;
+- (Scene*) gotoCurrentScene;
 - (void) prepareSceneForSearch: (Scene*) scene;
-- (void) gotoNextStory: (Story*) currentStory;
+- (void) endStory: (Story*) currentStory;
+
+// Game status
+- (GameStatus*) gameStatus;
 
 @end

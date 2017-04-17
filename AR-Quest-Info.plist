@@ -11,7 +11,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>0.1.0</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera is used to find an artifact in the current cache</string>
 	<key>UIStatusBarHidden</key>
@@ -30,7 +30,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>0.1.0</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSAppTransportSecurity</key>
@@ -75,6 +75,8 @@
 		<string>MKDirectionsModeTrain</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>User location is used to navigate to the next cache</string>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>User location is used to navigate to the next cache</string>
 </dict>
 </plist>

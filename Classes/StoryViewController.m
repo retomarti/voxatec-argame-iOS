@@ -45,6 +45,15 @@
         subtitleLabel.text = aboutLabel;
         storyTextView.text = story.text;
         
+        // Start button
+        GameStatus* gameStatus = [[TourManager theManager] gameStatus];
+        if ([gameStatus hasStoryStarted: story]) {
+            [startStoryButton setTitle: NSLocalizedString(@"STORY_START_BUTTON_TITLE_CONTINUE", @"Start button title")];
+        }
+        else {
+            [startStoryButton setTitle: NSLocalizedString(@"STORY_START_BUTTON_TITLE_START", @"Start button title")];
+        }
+        
         // Activity indicator view
         NSString* userInfo = NSLocalizedString(@"SCENE_CACHE_LOADING_INFO", @"Loading Cache Data");
         activityIndicatorView = [[ActivityIndicatorView alloc] initWithText: userInfo];
@@ -94,11 +103,21 @@
     [activityIndicatorView show];
     
     TourManager* theTourManager = [TourManager theManager];
+    GameStatus* gameStatus = [theTourManager gameStatus];
     theTourManager.delegate = self;
-    
-    self.scene = [self.story firstScene];
-    [theTourManager startStory: self.story];
-    [theTourManager prepareSceneForSearch: self.scene];
+
+    if ([gameStatus hasStoryStarted: self.story]) {
+        // Continue story
+        [theTourManager continueStory: self.story];
+        self.scene = [theTourManager gotoCurrentScene];
+        [theTourManager prepareSceneForSearch: self.scene];
+    }
+    else {
+        // Start story
+        [theTourManager startStory: self.story];
+        self.scene = [theTourManager gotoFirstScene];
+        [theTourManager prepareSceneForSearch: self.scene];
+    }
 }
 
 
@@ -223,9 +242,9 @@
     startStoryButton.enabled = false;
 
     // Switch to next scene (if any)
-    Scene* nextScene = [self.story nextSceneTo: self.scene];
+    Scene* nextScene = [[TourManager theManager] gotoNextScene: self.scene];
+    
     if (nextScene != nil) {
-        // Show activity indicator view
         [activityIndicatorView show];
         
         // Show network indicator in navigation bar
@@ -234,10 +253,14 @@
         self.scene = nextScene;
         [[TourManager theManager] prepareSceneForSearch: nextScene];
     }
+
+    // Story ended
     else {
         NSString* title = NSLocalizedString(@"STORY_FINISHED_DLG_TITLE", @"Story finished dialog title");
         NSString* successMsg = NSLocalizedString(@"STORY_FINISHED_DLG_MESSAGE", @"Story finished message");
         
+        self.scene = nil;
+        [[TourManager theManager] endStory: self.story];
         [self showMessageWithTitle: title message: successMsg];
     }
     

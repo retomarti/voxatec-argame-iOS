@@ -16,6 +16,8 @@
 @synthesize name, text;
 
 
+// Initialisation ------------------------------------------------------------------------
+
 - (id) init {
     self = [super init];
     
@@ -29,6 +31,28 @@
 - (void) dealloc {
     name = nil;
     text = nil;
+}
+
+
+// NSCoding protocol ----------------------------------------------------------------------
+
+- (instancetype) initWithCoder: (NSCoder*) decoder {
+    self = [super initWithCoder: decoder];
+    
+    if (self != nil) {
+        self.name = [decoder decodeObjectForKey: @"name"];
+        self.text = [decoder decodeObjectForKey: @"text"];
+    }
+    return self;
+}
+
+
+- (void) encodeWithCoder: (NSCoder*) encoder {
+    [super encodeWithCoder: encoder];
+
+    // version
+    [encoder encodeObject: self.name forKey: @"name"];
+    [encoder encodeObject: self.text forKey: @"text"];
 }
 
 

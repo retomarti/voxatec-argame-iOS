@@ -22,6 +22,8 @@
 
 /* Story Strings ----------------------------------------------------------------------------------------------------*/
 "STORY_VIEW_TITLE" = "Story";
+"STORY_START_BUTTON_TITLE_START" = "Start";
+"STORY_START_BUTTON_TITLE_CONTINUE" = "Continue";
 "STORY_WHAT_YOU_MAY_EXPECT_LABEL" = "What you may expect";
 "STORY_SERVER_ACCESS_PROBLEM_DLG_TITLE" = "Server access problem";
 "STORY_FINISHED_DLG_TITLE" = "Story finished";

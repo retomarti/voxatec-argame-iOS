@@ -13,7 +13,7 @@
 #import "ARObject.h"
 
 
-@interface NamedObject : ARObject {
+@interface NamedObject : ARObject <NSCoding> {
 }
 
 @property (atomic, strong) NSString* name;

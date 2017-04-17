@@ -45,10 +45,12 @@ static TourManager* theManager = nil;
     return theManager;
 }
 
+
 - (id) init {
     self = [super init];
     
     if (self) {
+        gameStatus = [GameStatus loadInstance];
         parser = [ObjFileParser new];
     }
     
@@ -58,30 +60,78 @@ static TourManager* theManager = nil;
 
 - (void) dealloc {
     adventures = nil;
+    theAdventure = nil;
     theStory = nil;
     theScene = nil;
     delegate = nil;
+    gameStatus = nil;
     parser = nil;
     fileMapTable = nil;
 }
 
 
 
-// Story workflow -----------------------------------------------------------------------------------------------------
+// Story workflow ------------------------------------------------------------------------------------------
 
 - (void) startStory: (Story*) story {
     theStory = story;
+    [gameStatus startStory: story];
 }
 
 
-- (void) gotoNextScene: (Scene*) currentScene {
+- (void) continueStory: (Story*) story {
+    theStory = story;
+    [gameStatus continueStory: story];
+}
+
+
+- (Scene*) gotoFirstScene {
+    theScene = [theStory firstScene];
+    [gameStatus startScene: theScene ofStory: theStory];
+    return theScene;
+}
+
+
+- (Scene*) gotoNextScene: (Scene*) currentScene {
+    [gameStatus endScene: currentScene ofStory: theStory];
+    theScene = [theStory nextSceneTo: currentScene];
     
-}
-
-
-- (void) gotoNextStory: (Story*) currentStory {
+    if (theScene != nil) {
+        [gameStatus startScene: theScene ofStory: theStory];
+    }
     
+    return theScene;
 }
+
+
+- (Scene*) gotoCurrentScene {
+    // Get last started scene of theStory
+    Scene* sceneProxy = [gameStatus lastStartedSceneOfStory: theStory];
+    
+    if (sceneProxy != nil) {
+        theScene = [theStory sceneWithId: sceneProxy.id];
+    }
+    else {
+        theScene = [theStory firstScene];
+        [gameStatus startScene: theScene ofStory: theStory];
+    }
+    
+    return theScene;
+}
+
+
+- (void) endStory: (Story*) currentStory {
+    [gameStatus endStory: currentStory];
+    theStory = nil;
+}
+
+
+// Game status ---------------------------------------------------------------------------------------------
+
+- (GameStatus*) gameStatus {
+    return gameStatus;
+}
+
 
 
 // Load Adventures -----------------------------------------------------------------------------------------

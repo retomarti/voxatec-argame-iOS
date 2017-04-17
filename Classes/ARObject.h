@@ -14,7 +14,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ARObject : NSObject {
+@interface ARObject : NSObject <NSCoding> {
 }
 
 @property (atomic, strong) NSNumber* id;

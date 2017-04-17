@@ -12,6 +12,7 @@
 #define Adventure_h
 
 #import "NamedObject.h"
+#import "Story.h"
 
 
 @interface Adventure : NamedObject {
@@ -20,7 +21,9 @@
 @property (atomic, strong) NSMutableArray* stories;
 
 + (Adventure*) newAdventure;
-
+- (Story*) nextStoryTo: (Story*) story;
+   
+   
 @end
 
 

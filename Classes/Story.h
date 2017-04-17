@@ -15,7 +15,7 @@
 #import "Cache.h"
 
 
-@interface Story : NamedObject {
+@interface Story : NamedObject <NSCoding> {
 }
 
 @property (atomic, strong) NSMutableArray* scenes;
@@ -25,6 +25,7 @@
 - (Scene*) firstScene;
 - (Scene*) nextSceneTo: (Scene*) scene;
 - (Scene*) lastScene;
+- (Scene*) sceneWithId: (NSNumber*) sceneId;
 - (Scene*) sceneWithName: (NSString*) sceneName;
 
 @end

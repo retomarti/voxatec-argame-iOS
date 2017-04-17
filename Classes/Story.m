@@ -18,6 +18,8 @@
 @synthesize scenes, price;
 
 
+// Initialisation ------------------------------------------------------------------------
+
 - (id) init {
     self = [super init];
     
@@ -61,6 +63,20 @@
 }
 
 
+- (Scene*) sceneWithId: (NSNumber*) sceneId {
+    Scene* scene = nil;
+    
+    // Iterate over scenes
+    for (scene in scenes) {
+        if (scene.id == sceneId)
+            return scene;
+    }
+    
+    // not found
+    return nil;
+}
+
+
 - (Scene*) sceneWithName: (NSString*) sceneName {
     
     if (sceneName == nil)
@@ -77,5 +93,29 @@
     // not found
     return nil;
 }
+
+
+// NSCoding protocol ----------------------------------------------------------------------
+
+- (instancetype) initWithCoder: (NSCoder*) decoder {
+    self = [super initWithCoder: decoder];
+    
+    if (self != nil) {
+        self.scenes = [decoder decodeObjectForKey: @"scenes"];
+        self.price = [decoder decodeObjectForKey: @"price"];
+    }
+    return self;
+}
+
+
+- (void) encodeWithCoder: (NSCoder*) encoder {
+    [super encodeWithCoder: encoder];
+    
+    // version
+    [encoder encodeObject: self.scenes forKey: @"scenes"];
+    [encoder encodeObject: self.price forKey: @"price"];
+}
+
+
 
 @end

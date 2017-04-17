@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="fkB-mQ-JVc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="fkB-mQ-JVc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -371,7 +371,7 @@
                                 <items>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="fiB-NF-e7y"/>
                                     <barButtonItem title="Pin" style="plain" id="Wa8-YS-9v2">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wLB-e1-TkZ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="wLB-e1-TkZ">
                                             <rect key="frame" x="58" y="0.0" width="27" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Cache Button" image="869-pin-toolbar.png">
@@ -617,7 +617,7 @@
                                             <constraint firstAttribute="height" constant="70" id="G0d-eM-Mdg"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do.">
+                                            <fragment content="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed.">
                                                 <attributes>
                                                     <font key="NSFont" size="16" name="HiraMinProN-W3"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -898,9 +898,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="714-camera-toolbar.png" width="20" height="16"/>
+        <image name="714-camera-toolbar.png" width="24" height="20"/>
         <image name="724-info-toolbar.png" width="20" height="20"/>
-        <image name="734-chat-toolbar.png" width="20" height="18"/>
+        <image name="734-chat-toolbar.png" width="22" height="20"/>
         <image name="816-satellite-toolbar.png" width="20" height="20"/>
         <image name="852-map-toolbar.png" width="22" height="18"/>
         <image name="869-pin-toolbar.png" width="12" height="22"/>

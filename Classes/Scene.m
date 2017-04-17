@@ -14,6 +14,8 @@
 @synthesize cache, object3D, riddle, light, targetImgName, targetImgXmlFile, targetImgDataFile;
 
 
+// Initialisation -------------------------------------------------------------------------
+
 - (id) init {
     self = [super init];
     
@@ -32,6 +34,27 @@
     targetImgName = nil;
     targetImgXmlFile = nil;
     targetImgDataFile = nil;
+}
+
+
+// NSCoding protocol ----------------------------------------------------------------------
+
+- (instancetype) initWithCoder: (NSCoder*) decoder {
+    self = [super initWithCoder: decoder];
+    if (self) {
+        // seqNr
+        self.seqNr = (int) [decoder decodeIntegerForKey: @"seqNr"];
+        // We don't store the rest of scene (only needed for game status persistency)
+    }
+    return self;
+}
+
+
+- (void) encodeWithCoder: (NSCoder*) encoder {
+    [super encodeWithCoder: encoder];
+
+    // seqNr
+    [encoder encodeInteger: (NSInteger) self.seqNr forKey: @"seqNr"];
 }
 
 

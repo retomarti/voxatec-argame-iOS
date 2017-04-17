@@ -13,6 +13,7 @@
 #import "Adventure.h"
 
 
+
 @implementation Adventure
 
 @synthesize stories;
@@ -38,5 +39,22 @@
 - (void) dealloc {
     stories = nil;
 }
+
+
+- (Story*) lastStory {
+    return [stories lastObject];
+}
+
+
+- (Story*) nextStoryTo: (Story*) story {
+    if (story == nil || story == [self lastStory])
+        return nil;
+    else {
+        NSUInteger idx = [stories indexOfObject: story];
+        Story* nextStory = [stories objectAtIndex: idx+1];
+        return nextStory;
+    }
+}
+
 
 @end
