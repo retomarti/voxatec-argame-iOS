@@ -10,17 +10,12 @@
 #import <Foundation/Foundation.h>
 #import "RiddleViewController.h"
 
-#define kIntroText @"Bevor du das nächsten Cache suchen kannst, musst du zuerst das folgende Rätsel lösen."
-#define kValidationResultTextOK @"Gratulation. Du hast das Rätsel gelöst und kannst nun das nächste Versteck suchen gehen."
-#define kValidationResultTextFail @"Deine Antwort ist leider falsch. Probier es doch noch einmal."
-
-
 
 @implementation RiddleViewController
 
 @synthesize scene, riddleViewTitle, introTextView,
             challengeNameLabel, challengeTextView, responseNameLabel, responseTextView,
-            validateButton, validationResultTextView, gotoNextSceneButton;
+            validateButton, validationResultTextView, gotoNextSceneButton, gotoNextStoryButton;
 
 
 // Initialisation
@@ -31,6 +26,8 @@
     challengeTextView = nil;
     responseNameLabel = nil;
     responseTextView = nil;
+    gotoNextSceneButton = nil;
+    gotoNextStoryButton = nil;
 }
 
 
@@ -55,12 +52,13 @@
         gotoNextSceneButton.titleLabel.text = buttonText;
         
         if (scene.riddle != nil && scene.riddle.challenge != nil) {
-            introTextView.text = kIntroText;
+            introTextView.text = NSLocalizedString(@"RIDDLE_INTRO_TEXT", @"Riddle Intro Text");
             challengeTextView.text = scene.riddle.challenge;
             responseTextView.delegate = self;
             validateButton.hidden = false;
             validationResultTextView.hidden = true;
             gotoNextSceneButton.hidden = true;
+            gotoNextStoryButton.hidden = true;
         }
     }
 }
@@ -68,20 +66,33 @@
 // Actions ------------------------------------------------------------------------------------------------
 
 - (void) validateResponse:(id)sender {
+    // Hide keyboard
+    [self.view endEditing:YES];
+    
     NSString* playerResponse = [self.responseTextView.text uppercaseString];
     NSString* correctResponse = [scene.riddle.response uppercaseString];
     
     if ([playerResponse isEqualToString: correctResponse]) {
         // Response was correct
-        validationResultTextView.text = kValidationResultTextOK;
-        validationResultTextView.hidden = false;
-        validationResultTextView.textColor = [UIColor colorWithRed: 0.245 green: 0.578 blue: 0.317 alpha: 1.0];;
-        gotoNextSceneButton.hidden = false;
         validateButton.hidden = true;
+        
+        // Activate nextScene / nextStory button
+        if ([[TourManager theManager] isLastScene: scene]) {
+            validationResultTextView.text = NSLocalizedString(@"RIDDLE_SUCCESS_TEXT_TO_NEXT_STORY", @"Riddle OK Text & next Story");
+            validationResultTextView.hidden = false;
+            validationResultTextView.textColor = [UIColor colorWithRed: 0.245 green: 0.578 blue: 0.317 alpha: 1.0];;
+            gotoNextStoryButton.hidden = false;
+        }
+        else {
+            validationResultTextView.text = NSLocalizedString(@"RIDDLE_SUCCESS_TEXT_TO_NEXT_CACHE", @"Riddle OK Text & next Cache");
+            validationResultTextView.hidden = false;
+            validationResultTextView.textColor = [UIColor colorWithRed: 0.245 green: 0.578 blue: 0.317 alpha: 1.0];;
+            gotoNextSceneButton.hidden = false;
+        }
     }
     else {
         // Response was wrong
-        validationResultTextView.text = kValidationResultTextFail;
+        validationResultTextView.text = NSLocalizedString(@"RIDDLE_FAILURE_TEXT", @"Riddle Failure Text");
         validationResultTextView.hidden = false;
         validationResultTextView.textColor = [UIColor redColor];
     }

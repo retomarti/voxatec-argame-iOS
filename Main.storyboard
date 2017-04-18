@@ -596,7 +596,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dNk-A5-gzG">
-                                <rect key="frame" x="16" y="200" width="343" height="336"/>
+                                <rect key="frame" x="16" y="200" width="343" height="376"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyT-RZ-P7Z">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
@@ -648,17 +648,17 @@
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjM-sp-Aad" userLabel="Validation Text View">
                                         <rect key="frame" x="0.0" y="178" width="343" height="78"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="78" id="TfQ-bp-2U7"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                 <attributes>
                                                     <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="NSColor" red="0.82954226732254033" green="0.29459217049199948" blue="0.1348298807584114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <font key="NSFont" size="16" name=".SFNSText"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -708,6 +708,27 @@
                                             <segue destination="p7w-hk-TxO" kind="unwind" unwindAction="gotoNextScene:" id="G7h-EV-2xm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tVK-4d-RJd" userLabel="Next Story Button">
+                                        <rect key="frame" x="0.0" y="346" width="343" height="30"/>
+                                        <color key="backgroundColor" red="0.94409304859999998" green="0.4817245007" blue="0.1890771389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JSh-vw-tLN"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.98683147770000001" blue="0.98545494339999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Goto Next Story">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <segue destination="p7w-hk-TxO" kind="unwind" unwindAction="gotoNextStory:" id="B8Q-1i-D7O"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HdC-yI-Jmm" firstAttribute="top" secondItem="ZyT-RZ-P7Z" secondAttribute="bottom" constant="10" id="Ujj-Xi-n3E"/>
@@ -736,6 +757,7 @@
                         <outlet property="challengeNameLabel" destination="ZyT-RZ-P7Z" id="d4b-0l-EkV"/>
                         <outlet property="challengeTextView" destination="HdC-yI-Jmm" id="nRb-MM-Hqy"/>
                         <outlet property="gotoNextSceneButton" destination="Usf-gD-BRV" id="006-kn-Ku3"/>
+                        <outlet property="gotoNextStoryButton" destination="tVK-4d-RJd" id="51G-Ys-GE9"/>
                         <outlet property="introTextView" destination="e4J-fX-IEN" id="KhU-52-sCO"/>
                         <outlet property="responseNameLabel" destination="jv0-6k-8uE" id="VNU-Qd-rBs"/>
                         <outlet property="responseTextView" destination="pHO-aW-BnZ" id="aXh-39-its"/>

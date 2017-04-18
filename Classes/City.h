@@ -9,6 +9,6 @@
 
 #import "NamedObject.h"
 
-@interface City : NamedObject
+@interface City : NamedObject <NSCoding>
 
 @end

@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIButton* validateButton;
 @property (strong, nonatomic) IBOutlet UITextView* validationResultTextView;
 @property (strong, nonatomic) IBOutlet UIButton* gotoNextSceneButton;
+@property (strong, nonatomic) IBOutlet UIButton* gotoNextStoryButton;
 
 
 // Data model

@@ -49,6 +49,11 @@
 // Singleton
 + (TourManager*) theManager;
 
+// State access
+- (GameStatus*) gameStatus;
+- (Story*) currentStory;
+- (Scene*) currentScene;
+
 // Tour workflow
 - (void) loadNearbyAdventures: (CLLocation*) userLocation;
 - (void) startStory: (Story*) story;
@@ -56,10 +61,8 @@
 - (Scene*) gotoFirstScene;
 - (Scene*) gotoNextScene: (Scene*) currentScene;
 - (Scene*) gotoCurrentScene;
+- (BOOL) isLastScene: (Scene*) scene;
 - (void) prepareSceneForSearch: (Scene*) scene;
 - (void) endStory: (Story*) currentStory;
-
-// Game status
-- (GameStatus*) gameStatus;
 
 @end

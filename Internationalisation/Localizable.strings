@@ -50,5 +50,10 @@
 "RIDDLE_CHALLENGE_LABEL_TEXT" = "Riddle";
 "RIDDLE_RESPONSE_LABEL_TEXT" = "Response";
 "RIDDLE_VALIDATE_BUTTON_TEXT" = "Validate";
+"RIDDLE_INTRO_TEXT" = "Bevor du das nächsten Cache suchen kannst, musst du zuerst das folgende Rätsel lösen.";
+"RIDDLE_SUCCESS_TEXT_TO_NEXT_CACHE" = "Gratulation. Du hast das Rätsel gelöst und kannst nun das nächste Versteck suchen gehen.";
+"RIDDLE_SUCCESS_TEXT_TO_NEXT_STORY" = "Gratulation. Du hast das Rätsel gelöst und somit die Story erfolgreich absolviert.";
+"RIDDLE_FAILURE_TEXT" = "Deine Antwort ist leider falsch. Probier es doch noch einmal.";
+
 
 

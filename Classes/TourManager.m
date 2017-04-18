@@ -104,6 +104,11 @@ static TourManager* theManager = nil;
 }
 
 
+- (BOOL) isLastScene: (Scene*) scene {
+    return scene == [theStory lastScene];
+}
+
+
 - (Scene*) gotoCurrentScene {
     // Get last started scene of theStory
     Scene* sceneProxy = [gameStatus lastStartedSceneOfStory: theStory];
@@ -130,6 +135,16 @@ static TourManager* theManager = nil;
 
 - (GameStatus*) gameStatus {
     return gameStatus;
+}
+
+
+- (Story*) currentStory {
+    return theStory;
+}
+
+
+- (Scene*) currentScene {
+    return theScene;
 }
 
 

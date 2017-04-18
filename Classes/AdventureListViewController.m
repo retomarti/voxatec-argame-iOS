@@ -218,7 +218,11 @@
 
 // Segue methods (unwind)
 - (IBAction) gotoNextStory: (UIStoryboardSegue*) sender {
+    // Current story ended
+    TourManager* tourManager = [TourManager theManager];
+    Story* currentStory = [tourManager currentStory];
     
+    [tourManager endStory: currentStory];
 }
 
 
