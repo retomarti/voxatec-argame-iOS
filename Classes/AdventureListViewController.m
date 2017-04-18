@@ -8,6 +8,7 @@
 //----------------------------------------------------------------------------------------
 
 #import "AdventureListViewController.h"
+#import "AdventureListViewCell.h"
 #import "Adventure.h"
 #import "Story.h"
 #import "StoryViewController.h"
@@ -125,9 +126,9 @@
 - (UITableViewCell*) tableView: (UITableView*) tableView cellForRowAtIndexPath: (NSIndexPath*) indexPath {
     static NSString* CellIdentifier = @"Cell";
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
+    AdventureListViewCell* cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: CellIdentifier];
+        cell = [[AdventureListViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: CellIdentifier];
     }
     
     NSInteger section = [indexPath section];
@@ -138,15 +139,28 @@
     Story* story = [adv.stories objectAtIndex: row];
     
     NSString* priceText = NSLocalizedString(@"ADV_PRICE_VALUE", @"Preis & Currency");
+    priceText = [NSString stringWithFormat: priceText, story.price];
+    
     NSString* distText = NSLocalizedString(@"ADV_DIST_TO_USER_LOCATION", @"Distance to user location");
     CLLocationDistance userDist = [self distOfUserLocationToStory: story];
-    NSString* text = [[[NSString stringWithFormat: priceText, story.price]
-                          stringByAppendingString: @", "]
-                          stringByAppendingString: [NSString stringWithFormat: distText, userDist / 1000.0]];
+    distText = [NSString stringWithFormat: distText, userDist / 1000.0];
     
-    cell.textLabel.text = [story name];
-    cell.detailTextLabel.text = text;
-    cell.detailTextLabel.textColor = [UIColor grayColor];
+    cell.titleLabel.text = [story name];
+    
+    cell.priceLabel.text = priceText;
+    cell.priceLabel.textColor = [UIColor grayColor];
+    
+    cell.distanceLabel.text = distText;
+    cell.distanceLabel.textColor = [UIColor grayColor];
+    
+    GameStatus* gameStatus = [[TourManager theManager] gameStatus];
+    if ([gameStatus hasStoryStarted: story]) {
+        cell.statusLabel.text = NSLocalizedString(@"ADV_WORKFLOW_STATUS_CONTINUE", @"Workflow Continue Text");
+        cell.statusLabel.hidden = NO;
+    }
+    else {
+        cell.statusLabel.hidden = YES;
+    }
     
     return cell;
 }
@@ -225,5 +239,6 @@
     [tourManager endStory: currentStory];
 }
 
-
 @end
+
+

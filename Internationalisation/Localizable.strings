@@ -15,7 +15,8 @@
 "ADV_FIND_NEARBY_ADVENTURES_TEXT" = "Find nearby Adventures";
 "ADV_AUGMENTED_REALITY_ADVENTURES_TITLE" = "Augmented Reality Adventures";
 "ADV_PRICE_VALUE" = "Price: CHF %@.0";
-"ADV_DIST_TO_USER_LOCATION" = "Distance: %.02f km";
+"ADV_DIST_TO_USER_LOCATION" = "Dist.: %.02f km";
+"ADV_WORKFLOW_STATUS_CONTINUE" = "Continue";
 "ADV_WHATS_ABOUT_LABEL" = "What's about?";
 "ADV_LIST_VIEW_TITLE" = "Adventures";
 "ADV_DETAIL_VIEW_TITLE" = "Adventure";

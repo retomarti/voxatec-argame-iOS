@@ -69,38 +69,71 @@
         <scene sceneID="jrl-XH-m0S">
             <objects>
                 <tableViewController title="Adventure List" id="psH-dp-Nab" customClass="AdventureListViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="blA-Ey-04Y">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="54" sectionHeaderHeight="18" sectionFooterHeight="18" id="blA-Ey-04Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="d3Q-5j-d6l" detailTextLabel="Per-Sl-Gdf" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="qkI-rM-mES">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="qkI-rM-mES" customClass="AdventureListViewCell">
+                                <rect key="frame" x="0.0" y="56" width="375" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qkI-rM-mES" id="tEd-Qm-rTw">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d3Q-5j-d6l">
-                                            <rect key="frame" x="15" y="13" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edG-9J-Now">
+                                            <rect key="frame" x="19" y="8" width="315" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="J5b-B3-psl"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Per-Sl-Gdf">
-                                            <rect key="frame" x="15" y="33.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqx-Bx-NfR">
+                                            <rect key="frame" x="19" y="28" width="33" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lto-7Q-G91">
+                                            <rect key="frame" x="60" y="28" width="114" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="114" id="Hju-eQ-xdN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdl-JU-hAa">
+                                            <rect key="frame" x="290" y="27" width="44" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.23354106220000001" green="0.58459336299999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Pdl-JU-hAa" firstAttribute="trailing" secondItem="edG-9J-Now" secondAttribute="trailing" id="DtI-1z-MfH"/>
+                                        <constraint firstItem="Pdl-JU-hAa" firstAttribute="baseline" secondItem="lto-7Q-G91" secondAttribute="baseline" id="FV2-ec-vGf"/>
+                                        <constraint firstItem="xqx-Bx-NfR" firstAttribute="baseline" secondItem="lto-7Q-G91" secondAttribute="baseline" id="FuM-64-VDd"/>
+                                        <constraint firstItem="edG-9J-Now" firstAttribute="trailing" secondItem="tEd-Qm-rTw" secondAttribute="trailingMargin" id="ZC0-dV-Umm"/>
+                                        <constraint firstItem="lto-7Q-G91" firstAttribute="leading" secondItem="xqx-Bx-NfR" secondAttribute="trailing" constant="8" symbolic="YES" id="fKT-J9-Mbm"/>
+                                        <constraint firstItem="edG-9J-Now" firstAttribute="top" secondItem="tEd-Qm-rTw" secondAttribute="topMargin" id="gSw-3P-Lai"/>
+                                        <constraint firstItem="xqx-Bx-NfR" firstAttribute="top" secondItem="edG-9J-Now" secondAttribute="bottom" constant="2" id="mVk-SG-BoQ"/>
+                                        <constraint firstItem="xqx-Bx-NfR" firstAttribute="leading" secondItem="edG-9J-Now" secondAttribute="leading" id="wpX-xl-krh"/>
+                                        <constraint firstItem="edG-9J-Now" firstAttribute="leading" secondItem="tEd-Qm-rTw" secondAttribute="leadingMargin" constant="11" id="xGa-77-7xX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="distanceLabel" destination="lto-7Q-G91" id="qh4-mT-S4I"/>
+                                    <outlet property="priceLabel" destination="xqx-Bx-NfR" id="Ckb-0A-L90"/>
+                                    <outlet property="statusLabel" destination="Pdl-JU-hAa" id="BvU-gc-Y3D"/>
+                                    <outlet property="titleLabel" destination="edG-9J-Now" id="7mi-nG-LvW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -117,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZM-Zo-uOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="138"/>
+            <point key="canvasLocation" x="259.5" y="137.5"/>
         </scene>
         <!--Adventure Detail-->
         <scene sceneID="TT2-wr-wX4">
@@ -654,7 +687,7 @@
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <attributes>
                                                     <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="NSColor" red="0.82954226732254033" green="0.29459217049199948" blue="0.1348298807584114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

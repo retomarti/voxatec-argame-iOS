@@ -130,6 +130,7 @@
 		DAD8D3641E6DE3C20027897E /* 734-chat-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3621E6DE3C20027897E /* 734-chat-toolbar@2x.png */; };
 		DAD8D3651E6DE3C20027897E /* 734-chat-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3631E6DE3C20027897E /* 734-chat-toolbar@3x.png */; };
 		DAD8D3671E6DFD830027897E /* 869-pin-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3661E6DFD830027897E /* 869-pin-toolbar-selected@2x.png */; };
+		DAE5E2EB1EA69988005151CF /* AdventureListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE5E2EA1EA69988005151CF /* AdventureListViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -311,6 +312,8 @@
 		DAD8D3621E6DE3C20027897E /* 734-chat-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "734-chat-toolbar@2x.png"; path = "Assets/734-chat-toolbar@2x.png"; sourceTree = SOURCE_ROOT; };
 		DAD8D3631E6DE3C20027897E /* 734-chat-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "734-chat-toolbar@3x.png"; path = "Assets/734-chat-toolbar@3x.png"; sourceTree = SOURCE_ROOT; };
 		DAD8D3661E6DFD830027897E /* 869-pin-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "869-pin-toolbar-selected@2x.png"; path = "Assets/869-pin-toolbar-selected@2x.png"; sourceTree = SOURCE_ROOT; };
+		DAE5E2E91EA69988005151CF /* AdventureListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdventureListViewCell.h; path = Classes/AdventureListViewCell.h; sourceTree = SOURCE_ROOT; };
+		DAE5E2EA1EA69988005151CF /* AdventureListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdventureListViewCell.m; path = Classes/AdventureListViewCell.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +354,8 @@
 				CE363D081C4F9B2100828DC9 /* AppAboutViewController.m */,
 				CE363D0A1C539D6300828DC9 /* AdventureListViewController.h */,
 				CE363D0B1C539D6300828DC9 /* AdventureListViewController.m */,
+				DAE5E2E91EA69988005151CF /* AdventureListViewCell.h */,
+				DAE5E2EA1EA69988005151CF /* AdventureListViewCell.m */,
 				CEE502211E31F6A10046A06E /* AdventureDetailViewController.h */,
 				CEE502221E31F6A10046A06E /* AdventureDetailViewController.m */,
 				CE363D0D1C539DB800828DC9 /* StoryViewController.h */,
@@ -802,6 +807,7 @@
 				CEE502231E31F6A10046A06E /* AdventureDetailViewController.m in Sources */,
 				CEEF93671E45DB3C005E9082 /* HalfSizePresentationController.m in Sources */,
 				CEB247011C62030D00BA9A3A /* File.m in Sources */,
+				DAE5E2EB1EA69988005151CF /* AdventureListViewCell.m in Sources */,
 				CEFD4A3A1C4C08A100CB0B27 /* TextureShader.mm in Sources */,
 				CEEEF12F1E22644200040365 /* OglObject.m in Sources */,
 				CEFD4A1F1C4C048500CB0B27 /* TourManager.m in Sources */,
