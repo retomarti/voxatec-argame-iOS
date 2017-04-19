@@ -12,7 +12,7 @@
 "GEN_CAMERA_ACCESS_WARNING_TITLE" = "Camera Access Problem";
 
 /* Adventure Strings ------------------------------------------------------------------------------------------------*/
-"ADV_FIND_NEARBY_ADVENTURES_TEXT" = "Find nearby Adventures";
+"ADV_FIND_NEARBY_ADVENTURES_TEXT" = "Find Nearby Adventures";
 "ADV_AUGMENTED_REALITY_ADVENTURES_TITLE" = "Augmented Reality Adventures";
 "ADV_PRICE_VALUE" = "Price: CHF %@.0";
 "ADV_DIST_TO_USER_LOCATION" = "Dist.: %.02f km";
@@ -25,10 +25,10 @@
 "STORY_VIEW_TITLE" = "Story";
 "STORY_START_BUTTON_TITLE_START" = "Start";
 "STORY_START_BUTTON_TITLE_CONTINUE" = "Continue";
-"STORY_WHAT_YOU_MAY_EXPECT_LABEL" = "What you may expect";
-"STORY_SERVER_ACCESS_PROBLEM_DLG_TITLE" = "Server access problem";
+"STORY_WHAT_YOU_MAY_EXPECT_LABEL" = "What's about?";
+"STORY_SERVER_ACCESS_PROBLEM_DLG_TITLE" = "Server Access Problem";
 "STORY_FINISHED_DLG_TITLE" = "Story finished";
-"STORY_FINISHED_DLG_MESSAGE" = "Congratulations! You solved all riddles of this story.";
+"STORY_FINISHED_DLG_MESSAGE" = "Congratulation! You solved all story riddles.";
 
 /* Scene Strings ----------------------------------------------------------------------------------------------------*/
 "SCENE_VIEW_TITLE" = "Cache";
@@ -39,7 +39,7 @@
 "SCENE_HINT_DISMISS_BTN_TEXT" = "OK, Thanks";
 
 /* Cache Strings ----------------------------------------------------------------------------------------------------*/
-"CACHE_LOCATION_FAILURE_MSG" = "Failed to Get Your Location";
+"CACHE_LOCATION_FAILURE_MSG" = "Your Location could not be determined.";
 "CACHE_LOCATION_FAILURE_TITLE" = "Location Error";
 
 /* Image Target Strings ---------------------------------------------------------------------------------------------*/
@@ -49,12 +49,12 @@
 /* Riddle Strings ---------------------------------------------------------------------------------------------------*/
 "RIDDLE_VIEW_TITLE" = "Riddle";
 "RIDDLE_CHALLENGE_LABEL_TEXT" = "Riddle";
-"RIDDLE_RESPONSE_LABEL_TEXT" = "Response";
+"RIDDLE_RESPONSE_LABEL_TEXT" = "Answer";
 "RIDDLE_VALIDATE_BUTTON_TEXT" = "Validate";
-"RIDDLE_INTRO_TEXT" = "Bevor du das nächsten Cache suchen kannst, musst du zuerst das folgende Rätsel lösen.";
-"RIDDLE_SUCCESS_TEXT_TO_NEXT_CACHE" = "Gratulation. Du hast das Rätsel gelöst und kannst nun das nächste Versteck suchen gehen.";
-"RIDDLE_SUCCESS_TEXT_TO_NEXT_STORY" = "Gratulation. Du hast das Rätsel gelöst und somit die Story erfolgreich absolviert.";
-"RIDDLE_FAILURE_TEXT" = "Deine Antwort ist leider falsch. Probier es doch noch einmal.";
+"RIDDLE_INTRO_TEXT" = "Before you may go to the next cache, you have to solve the following riddle.";
+"RIDDLE_SUCCESS_TEXT_TO_NEXT_CACHE" = "Congratulations. You solved the riddle and may go now to the next cache.";
+"RIDDLE_SUCCESS_TEXT_TO_NEXT_STORY" = "Congratulations. You solved all the riddles of this story. You may go now to another story.";
+"RIDDLE_FAILURE_TEXT" = "We're sorry but your answer is wrong. Just try again.";
 
 
 

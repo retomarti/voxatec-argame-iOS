@@ -276,9 +276,10 @@ static TourManager* theManager = nil;
     CLLocationCoordinate2D coord = [userLocation coordinate];
     NSNumber* gpsLat = [NSNumber numberWithDouble: coord.latitude];
     NSNumber* gpsLng = [NSNumber numberWithDouble: coord.longitude];
+    NSString* lang   = [[NSLocale preferredLanguages] objectAtIndex:0];
     
-    NSString* urlString = [NSString stringWithFormat: @"%@/nearby-adventure-caches?gpsLong=%@&gpsLat=%@",
-                                                      kHostAddress, [gpsLng stringValue], [gpsLat stringValue]];
+    NSString* urlString = [NSString stringWithFormat: @"%@/nearby-adventure-caches?lang=%@&gpsLong=%@&gpsLat=%@",
+                                                      kHostAddress, lang, [gpsLng stringValue], [gpsLat stringValue]];
     
     // Create task to load nearbyAdventures from server
     NSURLSession *session = [NSURLSession sharedSession];
@@ -378,10 +379,12 @@ static TourManager* theManager = nil;
     
     Object3D* obj3D = scene.object3D;
     unsigned int obj3DId = (unsigned int) [obj3D.id unsignedIntegerValue];
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%u",
+    NSString* lang   = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%u?lang=%@",
                            kHostAddress,
                            @"objects3D",
-                           obj3DId];
+                           obj3DId,
+                           lang];
     
     // Create task to load 3D objects for scene from server
     NSURLSession* session = [NSURLSession sharedSession];
@@ -432,10 +435,12 @@ static TourManager* theManager = nil;
     obj3D.obj3DFile = objFile;
     
     // Send http request for file
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@",
+    NSString* lang   = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@?lang=%@",
                            kHostAddress,
                            @"files/obj",
-                           obj3D.id];
+                           obj3D.id,
+                           lang];
     
     // Put file name into fileMapTable dictionary for storing
     [fileMapTable setObject: obj3D.obj3DFile forKey: urlString];
@@ -488,10 +493,12 @@ static TourManager* theManager = nil;
     obj3D.materialFile = mtlFile;
     
     // Send http request for file
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@",
+    NSString* lang   = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@?lang=%@",
                            kHostAddress,
                            @"files/mtl",
-                           obj3D.id];
+                           obj3D.id,
+                           lang];
     
     // Put file name into fileMapTable dictionary for storing
     [fileMapTable setObject: obj3D.materialFile forKey: urlString];
@@ -541,11 +548,13 @@ static TourManager* theManager = nil;
         NSAssert(textureFile.name != nil, @"TourManager: texture file name is nil");
         
         // Send http request for file
-        NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@/%@",
+        NSString* lang   = [[NSLocale preferredLanguages] objectAtIndex:0];
+        NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@/%@?lang=%@",
                                kHostAddress,
                                @"files/mtl",
                                obj3D.id,
-                               textureFile.name];
+                               textureFile.name,
+                               lang];
         
         // Put file name into fileMapTable dictionary for storing
         [fileMapTable setObject: textureFile forKey: urlString];
@@ -597,10 +606,12 @@ static TourManager* theManager = nil;
     aScene.targetImgDataFile = targetImgDataFile;
     
     // Send http request for file
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@",
+    NSString* lang   = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@?lang=%@",
                            kHostAddress,
                            @"files/target-dat",
-                           cache.cacheGroupId];
+                           cache.cacheGroupId,
+                           lang];
     
     // Put file name into fileMapTable dictionary for storing
     [fileMapTable setObject: aScene.targetImgDataFile forKey: urlString];
@@ -650,10 +661,12 @@ static TourManager* theManager = nil;
     aScene.targetImgXmlFile = targetImgXmlFile;
     
     // Send http request for file
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@",
+    NSString* lang   = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@?lang=%@",
                            kHostAddress,
                            @"files/target-xml",
-                           cache.cacheGroupId];
+                           cache.cacheGroupId,
+                           lang];
     
     // Put file name into fileMapTable dictionary for storing
     [fileMapTable setObject: aScene.targetImgXmlFile forKey: urlString];

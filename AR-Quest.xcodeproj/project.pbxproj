@@ -17,7 +17,6 @@
 		CE53637F1CE5FD58000BAC25 /* NamedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53637E1CE5FD58000BAC25 /* NamedObject.m */; };
 		CE5363821CE60C5A000BAC25 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5363811CE60C5A000BAC25 /* Cache.m */; };
 		CE57589D1E4613BD0025B9FA /* treasure-map-launch-img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE57589C1E4613BD0025B9FA /* treasure-map-launch-img.jpg */; };
-		CE57589F1E4634360025B9FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE57589E1E4634360025B9FA /* Localizable.strings */; };
 		CE5758A11E4634800025B9FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5758A01E4634800025B9FA /* Images.xcassets */; };
 		CE5758A41E4647B50025B9FA /* Texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE5758A31E4647B50025B9FA /* Texture.mm */; };
 		CE5758A71E464A1B0025B9FA /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5758A61E464A1B0025B9FA /* Launch.storyboard */; };
@@ -50,7 +49,6 @@
 		CED6E7C91E2E55640037991E /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E7C81E2E55640037991E /* NSString+HTML.m */; };
 		CEE502231E31F6A10046A06E /* AdventureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE502221E31F6A10046A06E /* AdventureDetailViewController.m */; };
 		CEE502251E32646B0046A06E /* treasure-chest-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE502241E32646B0046A06E /* treasure-chest-icon.png */; };
-		CEE958EA1E4E426E00F91228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE958E91E4E426E00F91228 /* Main.storyboard */; };
 		CEEEF12F1E22644200040365 /* OglObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEEF12E1E22644200040365 /* OglObject.m */; };
 		CEEF93591E448BC3005E9082 /* SphericalHarmonicShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CEEF93581E448BC3005E9082 /* SphericalHarmonicShader.vsh */; };
 		CEEF935B1E44A07D005E9082 /* SphericalHarmonicShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CEEF935A1E44A07D005E9082 /* SphericalHarmonicShader.fsh */; };
@@ -110,6 +108,8 @@
 		D28C51261A8B5BC9000B6C9A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28C51251A8B5BC9000B6C9A /* AudioToolbox.framework */; };
 		DA0A88741EA360550048E662 /* GameStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A88731EA360550048E662 /* GameStatus.m */; };
 		DA0A88761EA36A7F0048E662 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A88751EA36A7F0048E662 /* CoreLocation.framework */; };
+		DA2680861EA755F5006813DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA2680881EA755F5006813DA /* Localizable.strings */; };
+		DA73D3E31EA759B600403F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2680831EA7542B006813DA /* Main.storyboard */; };
 		DA7F7E6E1E6B220B00155C3B /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7F7E6D1E6B220B00155C3B /* City.m */; };
 		DAD8D3431E6DDD5F0027897E /* 816-satellite-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3421E6DDD5F0027897E /* 816-satellite-toolbar@3x.png */; };
 		DAD8D3451E6DDD830027897E /* 816-satellite-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8D3441E6DDD830027897E /* 816-satellite-toolbar-selected@3x.png */; };
@@ -153,7 +153,6 @@
 		CE5363801CE60A8E000BAC25 /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cache.h; path = Classes/Cache.h; sourceTree = SOURCE_ROOT; };
 		CE5363811CE60C5A000BAC25 /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cache.m; path = Classes/Cache.m; sourceTree = SOURCE_ROOT; };
 		CE57589C1E4613BD0025B9FA /* treasure-map-launch-img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "treasure-map-launch-img.jpg"; sourceTree = SOURCE_ROOT; };
-		CE57589E1E4634360025B9FA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Internationalisation/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		CE5758A01E4634800025B9FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
 		CE5758A21E4647B50025B9FA /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = Classes/Texture.h; sourceTree = SOURCE_ROOT; };
 		CE5758A31E4647B50025B9FA /* Texture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Texture.mm; path = Classes/Texture.mm; sourceTree = SOURCE_ROOT; };
@@ -201,7 +200,6 @@
 		CEE502211E31F6A10046A06E /* AdventureDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdventureDetailViewController.h; path = Classes/AdventureDetailViewController.h; sourceTree = SOURCE_ROOT; };
 		CEE502221E31F6A10046A06E /* AdventureDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdventureDetailViewController.m; path = Classes/AdventureDetailViewController.m; sourceTree = SOURCE_ROOT; };
 		CEE502241E32646B0046A06E /* treasure-chest-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "treasure-chest-icon.png"; path = "Assets/treasure-chest-icon.png"; sourceTree = SOURCE_ROOT; };
-		CEE958E91E4E426E00F91228 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CEEEF12E1E22644200040365 /* OglObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OglObject.m; path = Classes/OglObject.m; sourceTree = SOURCE_ROOT; };
 		CEEEF1301E22647900040365 /* OglObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OglObject.h; path = Classes/OglObject.h; sourceTree = SOURCE_ROOT; };
 		CEEF93581E448BC3005E9082 /* SphericalHarmonicShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SphericalHarmonicShader.vsh; path = Classes/Shaders/SphericalHarmonicShader.vsh; sourceTree = SOURCE_ROOT; };
@@ -221,7 +219,6 @@
 		CEFCC86B1E421290008BAD7F /* Magic_wand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Magic_wand.mp3; path = Assets/Magic_wand.mp3; sourceTree = SOURCE_ROOT; };
 		CEFCC86D1E4212BE008BAD7F /* IT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IT.png; path = Assets/IT.png; sourceTree = SOURCE_ROOT; };
 		CEFCC86F1E42136E008BAD7F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
-		CEFCC8751E426FB5008BAD7F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CEFD4A171C4C046800CB0B27 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = Classes/Scene.h; sourceTree = SOURCE_ROOT; };
 		CEFD4A181C4C046800CB0B27 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scene.m; path = Classes/Scene.m; sourceTree = SOURCE_ROOT; };
 		CEFD4A1D1C4C048500CB0B27 /* TourManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TourManager.h; path = Classes/TourManager.h; sourceTree = SOURCE_ROOT; };
@@ -291,6 +288,11 @@
 		DA0A88721EA360550048E662 /* GameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStatus.h; path = Classes/GameStatus.h; sourceTree = SOURCE_ROOT; };
 		DA0A88731EA360550048E662 /* GameStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameStatus.m; path = Classes/GameStatus.m; sourceTree = SOURCE_ROOT; };
 		DA0A88751EA36A7F0048E662 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DA2680821EA7542B006813DA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA2680841EA7543F006813DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA2680871EA755F5006813DA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA2680891EA757C3006813DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA73D3E21EA758D100403F27 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA7F7E6C1E6B220B00155C3B /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = SOURCE_ROOT; };
 		DA7F7E6D1E6B220B00155C3B /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = SOURCE_ROOT; };
 		DAD8D3421E6DDD5F0027897E /* 816-satellite-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "816-satellite-toolbar@3x.png"; path = "Assets/816-satellite-toolbar@3x.png"; sourceTree = SOURCE_ROOT; };
@@ -501,7 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				D21B087B1A1B6C710041ECF3 /* Frameworks */,
-				CEFCC8751E426FB5008BAD7F /* Main.storyboard */,
+				DA2680831EA7542B006813DA /* Main.storyboard */,
 				CE5758A61E464A1B0025B9FA /* Launch.storyboard */,
 				D21B07E81A1B4AA20041ECF3 /* AR-Quest Classes */,
 				D21B07E71A1B4AA20041ECF3 /* Products */,
@@ -531,7 +533,7 @@
 		D21B07E91A1B4AA20041ECF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CE57589E1E4634360025B9FA /* Localizable.strings */,
+				DA2680881EA755F5006813DA /* Localizable.strings */,
 				CEFCC86F1E42136E008BAD7F /* main.m */,
 				CE7EBC291E38BED2009DAF90 /* AR-Quest-Info.plist */,
 			);
@@ -713,6 +715,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA73D3E31EA759B600403F27 /* Main.storyboard in Resources */,
 				CEFD4A5F1C4C0B9200CB0B27 /* TextureShader.fsh in Resources */,
 				CEC534AC1C452A750072AD18 /* MaterialShader.fsh in Resources */,
 				DAD8D3531E6DE1C00027897E /* 724-info-toolbar@2x.png in Resources */,
@@ -734,8 +737,7 @@
 				CE5758A71E464A1B0025B9FA /* Launch.storyboard in Resources */,
 				DAD8D3581E6DE2C60027897E /* 852-map-toolbar@2x.png in Resources */,
 				CED6E7C51E2E18000037991E /* open-book-icon.png in Resources */,
-				CEE958EA1E4E426E00F91228 /* Main.storyboard in Resources */,
-				CE57589F1E4634360025B9FA /* Localizable.strings in Resources */,
+				DA2680861EA755F5006813DA /* Localizable.strings in Resources */,
 				DAD8D35D1E6DE3320027897E /* 869-pin-toolbar-selected@3x.png in Resources */,
 				DAD8D3551E6DE2B40027897E /* 852-map-toolbar-selected@3x.png in Resources */,
 				DAD8D3451E6DDD830027897E /* 816-satellite-toolbar-selected@3x.png in Resources */,
@@ -836,11 +838,35 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		DA2680831EA7542B006813DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA2680821EA7542B006813DA /* en */,
+				DA2680841EA7543F006813DA /* Base */,
+				DA73D3E21EA758D100403F27 /* de */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA2680881EA755F5006813DA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA2680871EA755F5006813DA /* de */,
+				DA2680891EA757C3006813DA /* en */,
+			);
+			name = Localizable.strings;
+			path = Internationalisation;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		D21B08071A1B4AA20041ECF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -889,6 +915,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

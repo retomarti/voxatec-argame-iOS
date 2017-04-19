@@ -1,0 +1,60 @@
+/* Vuforia Strings --------------------------------------------------------------------------------------------------*/
+"INIT_LICENSE_ERROR_NO_NETWORK_TRANSIENT" = "Unable to contact server. Please try again later.";
+"INIT_LICENSE_ERROR_NO_NETWORK_PERMANENT" = "No network available. Please make sure you are connected to the Internet.";
+"INIT_LICENSE_ERROR_INVALID_KEY" = "Invalid Key used. Please make sure you are using a valid Vuforia App Key.";
+"INIT_LICENSE_ERROR_CANCELED_KEY" = "This app license key has been canceled and may no longer be used. Please get a new license key.";
+"INIT_LICENSE_ERROR_MISSING_KEY" = "Vuforia App key is missing. Please get a valid key, by logging into your account at developer.vuforia.com and creating a new project.";
+"INIT_LICENSE_ERROR_PRODUCT_TYPE_MISMATCH" = "Vuforia App key is not valid for this product. Please get a valid key, by logging into your account at developer.vuforia.com and choosing the right product type during project creation.";
+"INIT_default" = "Initialization error";
+
+/* General Strings --------------------------------------------------------------------------------------------------*/
+"GEN_SERVER_ACCESS_PROBLEM_DLG_TITLE" = "Server Zugriffsproblem";
+"GEN_CAMERA_ACCESS_WARNING_TITLE" = "Kamera Zugriffsproblem";
+
+/* Adventure Strings ------------------------------------------------------------------------------------------------*/
+"ADV_FIND_NEARBY_ADVENTURES_TEXT" = "Nächste Abenteuer Finden";
+"ADV_AUGMENTED_REALITY_ADVENTURES_TITLE" = "Augmented Reality Abenteuer";
+"ADV_PRICE_VALUE" = "Preis: CHF %@.0";
+"ADV_DIST_TO_USER_LOCATION" = "Dist.: %.02f km";
+"ADV_WORKFLOW_STATUS_CONTINUE" = "Weiter";
+"ADV_WHATS_ABOUT_LABEL" = "Worum geht's?";
+"ADV_LIST_VIEW_TITLE" = "Abenteuer";
+"ADV_DETAIL_VIEW_TITLE" = "Abenteuer";
+
+/* Story Strings ----------------------------------------------------------------------------------------------------*/
+"STORY_VIEW_TITLE" = "Story";
+"STORY_START_BUTTON_TITLE_START" = "Start";
+"STORY_START_BUTTON_TITLE_CONTINUE" = "Weiter";
+"STORY_WHAT_YOU_MAY_EXPECT_LABEL" = "Worum geht's?";
+"STORY_SERVER_ACCESS_PROBLEM_DLG_TITLE" = "Server Zugriffsproblem";
+"STORY_FINISHED_DLG_TITLE" = "Story beendet";
+"STORY_FINISHED_DLG_MESSAGE" = "Gratulation! Du hast alle Rätsel der Story gelöst.";
+
+/* Scene Strings ----------------------------------------------------------------------------------------------------*/
+"SCENE_VIEW_TITLE" = "Cache";
+"SCENE_CACHE_LOADING_INFO" = "Cache-Daten Laden";
+"SCENE_CACHE_NR_LABEL" = "Cache No. %d";
+"SCENE_HINT_SEG_BTN_1_TEXT" = "1. Hinweis";
+"SCENE_HINT_SEG_BTN_2_TEXT" = "2. Hinweis";
+"SCENE_HINT_DISMISS_BTN_TEXT" = "OK, Danke";
+
+/* Cache Strings ----------------------------------------------------------------------------------------------------*/
+"CACHE_LOCATION_FAILURE_MSG" = "Dein Aufenthaltsort konnte nicht ermittelt werden";
+"CACHE_LOCATION_FAILURE_TITLE" = "Location-Fehler";
+
+/* Image Target Strings ---------------------------------------------------------------------------------------------*/
+"IMG_TARGETS_VIEW_TITLE" = "Artefakt";
+"IMG_TARGETS_SHOW_RIDDLE_BUTTON_TEXT" = "Weiter";
+
+/* Riddle Strings ---------------------------------------------------------------------------------------------------*/
+"RIDDLE_VIEW_TITLE" = "Rätsel";
+"RIDDLE_CHALLENGE_LABEL_TEXT" = "Rätsel";
+"RIDDLE_RESPONSE_LABEL_TEXT" = "Antwort";
+"RIDDLE_VALIDATE_BUTTON_TEXT" = "Bestätigen";
+"RIDDLE_INTRO_TEXT" = "Bevor du das nächsten Cache suchen kannst, musst du zuerst das folgende Rätsel lösen.";
+"RIDDLE_SUCCESS_TEXT_TO_NEXT_CACHE" = "Gratulation. Du hast das Rätsel gelöst und kannst nun das nächste Versteck suchen gehen.";
+"RIDDLE_SUCCESS_TEXT_TO_NEXT_STORY" = "Gratulation. Du hast das Rätsel gelöst und somit die Story erfolgreich absolviert.";
+"RIDDLE_FAILURE_TEXT" = "Deine Antwort ist leider falsch. Probier es doch noch einmal.";
+
+
+
