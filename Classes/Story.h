@@ -11,6 +11,7 @@
 #define Story_h
 
 #import "NamedObject.h"
+#import "City.h"
 #import "Scene.h"
 #import "Cache.h"
 
@@ -18,6 +19,7 @@
 @interface Story : NamedObject <NSCoding> {
 }
 
+@property (atomic, strong) City* city;
 @property (atomic, strong) NSMutableArray* scenes;
 @property (atomic, strong) NSNumber* price;
 

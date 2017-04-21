@@ -12,6 +12,7 @@
 @interface AdventureListViewCell : UITableViewCell
 
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel* titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel* cityLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel* priceLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel* distanceLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel* statusLabel;

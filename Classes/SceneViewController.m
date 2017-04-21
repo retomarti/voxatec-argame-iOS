@@ -12,11 +12,14 @@
 #import "SceneMapViewController.h"
 
 
+#define kARGamePinAnnotationIdent @"ARGamePinAnnotationView"
+
+
 @implementation SceneViewController
 
 
 @synthesize adventure, sceneViewTitle, adventureNameLabel, story, storyNameLabel, scene, sceneNameLabel,
-            cacheNrLabel, sceneTextView, speechSynthesizer;
+            cacheNrLabel, sceneTextView, sceneMapView, speechSynthesizer;
 
 
 // Initialisation
@@ -30,6 +33,7 @@
     sceneNameLabel = nil;
     cacheNrLabel = nil;
     sceneTextView = nil;
+    sceneMapView = nil;
 }
 
 
@@ -50,6 +54,15 @@
         
         // Remove insets in sceneTextView
         sceneTextView.textContainerInset = UIEdgeInsetsMake(0, -3, 0, 0);
+        
+        // sceneMapView
+        if (scene != nil) {
+            // Set cache location
+            [sceneMapView addAnnotation: scene.cache];
+            sceneMapView.delegate = self;
+            
+            // Set tap callback
+        }
 
     }
 }
@@ -63,6 +76,39 @@
         [speechSynthesizer stopSpeakingAtBoundary: AVSpeechBoundaryWord];
         speechSynthesizer = nil;
     }
+}
+
+
+
+// Annotation View Customisation ---------------------------------------------------------------
+
+- (MKAnnotationView*) mapView: (MKMapView*) theMapView viewForAnnotation: (id<MKAnnotation>) annotation {
+    
+    // We don't have a view for user location pin
+    if ([annotation isKindOfClass: [MKUserLocation class]])
+        return nil;
+    
+    // Try to dequeue an existing pin view first
+    MKPinAnnotationView* pinView = (MKPinAnnotationView*) [sceneMapView dequeueReusableAnnotationViewWithIdentifier: kARGamePinAnnotationIdent];
+    
+    // If no pin view already exists, create a new one
+    if (pinView == nil) {
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation: annotation
+                                                  reuseIdentifier: kARGamePinAnnotationIdent];
+    }
+    
+    pinView.pinTintColor = [UIColor purpleColor];
+    pinView.animatesDrop = YES;
+    pinView.canShowCallout = YES;
+    
+    // Add custom image
+    UIImageView* treasureMapImage = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"treasure-map-icon-32.png"]];
+    pinView.leftCalloutAccessoryView = treasureMapImage;
+    
+    // Prepare detail view
+    pinView.detailCalloutAccessoryView = nil;
+    
+    return pinView;
 }
 
 

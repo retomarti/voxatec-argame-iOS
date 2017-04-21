@@ -14,7 +14,7 @@
 #import "TourManager.h"
 
 
-@interface SceneViewController : ARGameViewController
+@interface SceneViewController : ARGameViewController <MKMapViewDelegate>
 
 // Outlet
 @property (strong, nonatomic) IBOutlet UINavigationItem* sceneViewTitle;
@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel* sceneNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel* cacheNrLabel;
 @property (strong, nonatomic) IBOutlet UITextView* sceneTextView;
+@property (strong, nonatomic) IBOutlet MKMapView* sceneMapView;
 
 // Data model
 @property (strong, nonatomic) Adventure* adventure;

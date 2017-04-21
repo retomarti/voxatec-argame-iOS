@@ -38,11 +38,12 @@ static NSString* const GSStoriesEnded   = @"storiesEnded";
 //-- Game Status Changes -----------------------------------------------------------------
 
 - (void) startStory: (Story*) story {
-    if (![self startedStoryWithId: story.id]) {
+    if (![self startedStoryWithId: story.id inCityWithId: story.city.id]) {
         // Create proxy story
         Story* startedStory = [Story new];
         startedStory.id = story.id;
         startedStory.name = story.name;
+        startedStory.city = story.city;
         startedStory.price = story.price;
         
         [storiesStarted addObject: startedStory];
@@ -53,15 +54,16 @@ static NSString* const GSStoriesEnded   = @"storiesEnded";
 
 
 - (void) continueStory: (Story*) story {
-    NSAssert([self startedStoryWithId: story.id], @"GameStatus: story to be continued was not yet started");
+    NSAssert([self startedStoryWithId: story.id inCityWithId: story.city.id],
+             @"GameStatus: story to be continued was not yet started");
     // nothing to do
 }
 
 
-- (Story*) startedStoryWithId: (NSNumber*) storyId {
+- (Story*) startedStoryWithId: (NSNumber*) storyId inCityWithId: (NSNumber*) cityId {
     // Retrieve story proxy with given id
     for (Story* story in storiesStarted) {
-        if (story.id == storyId)
+        if ((story.id == storyId) && (story.city != nil && story.city.id == cityId))
             return story;
     }
     
@@ -82,7 +84,7 @@ static NSString* const GSStoriesEnded   = @"storiesEnded";
 
 - (Scene*) startedSceneWithId: (NSNumber*) sceneId ofStory: (Story*) story {
     // Retrieve scene proxy with given id
-    Story* startedStory = [self startedStoryWithId: story.id];
+    Story* startedStory = [self startedStoryWithId: story.id inCityWithId: story.city.id];
     
     for (Scene* scene in startedStory.scenes) {
         if (scene.id == sceneId) {
@@ -102,7 +104,7 @@ static NSString* const GSStoriesEnded   = @"storiesEnded";
         startedScene.name = scene.name;
         
         // Add scene proxy to story proxy
-        Story* startedStory = [self startedStoryWithId: story.id];
+        Story* startedStory = [self startedStoryWithId: story.id inCityWithId: story.city.id];
         [startedStory.scenes addObject: startedScene];
         
         [self save];
@@ -117,7 +119,7 @@ static NSString* const GSStoriesEnded   = @"storiesEnded";
 
 - (void) endStory: (Story*) story {
     // Move story proxy to storiesEnded
-    Story* startedStory = [self startedStoryWithId: story.id];
+    Story* startedStory = [self startedStoryWithId: story.id inCityWithId: story.city.id];
     
     NSAssert(startedStory != nil, @"GameStatus: started story not found in status array");
     [storiesStarted removeObject: startedStory];
@@ -130,7 +132,7 @@ static NSString* const GSStoriesEnded   = @"storiesEnded";
 //-- Querying Game Status -----------------------------------------------------------------
 
 - (BOOL) hasStoryStarted: (Story*) story {
-    Story* startedStory = [self startedStoryWithId: story.id];
+    Story* startedStory = [self startedStoryWithId: story.id inCityWithId: story.city.id];
     return startedStory != nil;
 }
 
@@ -148,7 +150,7 @@ static NSString* const GSStoriesEnded   = @"storiesEnded";
 
 
 - (Scene*) lastStartedSceneOfStory: (Story*) story {
-    Story* startedStory = [self startedStoryWithId: story.id];
+    Story* startedStory = [self startedStoryWithId: story.id inCityWithId: story.city.id];
     Scene* lastStartedScene = nil;
     
     if (startedStory != nil) {

@@ -216,6 +216,7 @@ static TourManager* theManager = nil;
                     story.id = [storyDict valueForKey: @"id"];
                     story.name = [[storyDict valueForKey: @"name"] decodeHTMLCharacterEntities];
                     story.text = [[storyDict valueForKey: @"text"] decodeHTMLCharacterEntities];
+                    story.city = city;
                     story.scenes = [NSMutableArray new];
                     [adv.stories addObject: story];
 

@@ -17,6 +17,7 @@
 "ADV_PRICE_VALUE" = "Price: CHF %@.0";
 "ADV_DIST_TO_USER_LOCATION" = "Dist.: %.02f km";
 "ADV_WORKFLOW_STATUS_CONTINUE" = "Continue";
+"ADV_WORKFLOW_STATUS_ENDED" = "Finished";
 "ADV_WHATS_ABOUT_LABEL" = "What's about?";
 "ADV_LIST_VIEW_TITLE" = "Adventures";
 "ADV_DETAIL_VIEW_TITLE" = "Adventure";
@@ -55,6 +56,9 @@
 "RIDDLE_SUCCESS_TEXT_TO_NEXT_CACHE" = "Congratulations. You solved the riddle and may go now to the next cache.";
 "RIDDLE_SUCCESS_TEXT_TO_NEXT_STORY" = "Congratulations. You solved all the riddles of this story. You may go now to another story.";
 "RIDDLE_FAILURE_TEXT" = "We're sorry but your answer is wrong. Just try again.";
+"RIDDLE_NEXT_SCENE_BUTTON_TEXT" = "Goto next Cache";
+"RIDDLE_NEXT_STORY_BUTTON_TEXT" = "Goto next Story";
+
 
 
 

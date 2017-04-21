@@ -147,15 +147,21 @@
     
     cell.titleLabel.text = [story name];
     
+    cell.cityLabel.text = story.city.name;
+    
     cell.priceLabel.text = priceText;
-    cell.priceLabel.textColor = [UIColor grayColor];
+    // cell.priceLabel.textColor = [UIColor grayColor];
     
     cell.distanceLabel.text = distText;
-    cell.distanceLabel.textColor = [UIColor grayColor];
+    // cell.distanceLabel.textColor = [UIColor grayColor];
     
     GameStatus* gameStatus = [[TourManager theManager] gameStatus];
     if ([gameStatus hasStoryStarted: story]) {
         cell.statusLabel.text = NSLocalizedString(@"ADV_WORKFLOW_STATUS_CONTINUE", @"Workflow Continue Text");
+        cell.statusLabel.hidden = NO;
+    }
+    else if ([gameStatus hasStoryEnded: story]) {
+        cell.statusLabel.text = NSLocalizedString(@"ADV_WORKFLOW_STATUS_ENDED", @"Workflow Ended Text");
         cell.statusLabel.hidden = NO;
     }
     else {

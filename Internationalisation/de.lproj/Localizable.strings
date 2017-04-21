@@ -17,6 +17,7 @@
 "ADV_PRICE_VALUE" = "Preis: CHF %@.0";
 "ADV_DIST_TO_USER_LOCATION" = "Dist.: %.02f km";
 "ADV_WORKFLOW_STATUS_CONTINUE" = "Weiter";
+"ADV_WORKFLOW_STATUS_ENDED" = "Beendet";
 "ADV_WHATS_ABOUT_LABEL" = "Worum geht's?";
 "ADV_LIST_VIEW_TITLE" = "Abenteuer";
 "ADV_DETAIL_VIEW_TITLE" = "Abenteuer";
@@ -55,6 +56,8 @@
 "RIDDLE_SUCCESS_TEXT_TO_NEXT_CACHE" = "Gratulation. Du hast das Rätsel gelöst und kannst nun das nächste Versteck suchen gehen.";
 "RIDDLE_SUCCESS_TEXT_TO_NEXT_STORY" = "Gratulation. Du hast das Rätsel gelöst und somit die Story erfolgreich absolviert.";
 "RIDDLE_FAILURE_TEXT" = "Deine Antwort ist leider falsch. Probier es doch noch einmal.";
+"RIDDLE_NEXT_SCENE_BUTTON_TEXT" = "Zum nächsten Versteck";
+"RIDDLE_NEXT_STORY_BUTTON_TEXT" = "Zur nächsten Story";
 
 
 

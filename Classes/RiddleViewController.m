@@ -51,6 +51,10 @@
         buttonText = NSLocalizedString(@"RIDDLE_NEXT_SCENE_BUTTON_TEXT", @"Goto Next Scene Button Text");
         gotoNextSceneButton.titleLabel.text = buttonText;
         
+        buttonText = NSLocalizedString(@"RIDDLE_NEXT_STORY_BUTTON_TEXT", @"Goto Next Story Button Text");
+        gotoNextStoryButton.titleLabel.text = buttonText;
+
+        
         if (scene.riddle != nil && scene.riddle.challenge != nil) {
             introTextView.text = NSLocalizedString(@"RIDDLE_INTRO_TEXT", @"Riddle Intro Text");
             challengeTextView.text = scene.riddle.challenge;

@@ -288,11 +288,9 @@
 		DA0A88721EA360550048E662 /* GameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStatus.h; path = Classes/GameStatus.h; sourceTree = SOURCE_ROOT; };
 		DA0A88731EA360550048E662 /* GameStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameStatus.m; path = Classes/GameStatus.m; sourceTree = SOURCE_ROOT; };
 		DA0A88751EA36A7F0048E662 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		DA2680821EA7542B006813DA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DA2680841EA7543F006813DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA2680871EA755F5006813DA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA2680891EA757C3006813DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DA73D3E21EA758D100403F27 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA73D3E41EAA46C700403F27 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA7F7E6C1E6B220B00155C3B /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = SOURCE_ROOT; };
 		DA7F7E6D1E6B220B00155C3B /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = SOURCE_ROOT; };
 		DAD8D3421E6DDD5F0027897E /* 816-satellite-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "816-satellite-toolbar@3x.png"; path = "Assets/816-satellite-toolbar@3x.png"; sourceTree = SOURCE_ROOT; };
@@ -842,9 +840,7 @@
 		DA2680831EA7542B006813DA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DA2680821EA7542B006813DA /* en */,
-				DA2680841EA7543F006813DA /* Base */,
-				DA73D3E21EA758D100403F27 /* de */,
+				DA73D3E41EAA46C700403F27 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

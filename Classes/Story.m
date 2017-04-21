@@ -15,7 +15,7 @@
 
 @implementation Story
 
-@synthesize scenes, price;
+@synthesize city, scenes, price;
 
 
 // Initialisation ------------------------------------------------------------------------
@@ -101,6 +101,7 @@
     self = [super initWithCoder: decoder];
     
     if (self != nil) {
+        self.city = [decoder decodeObjectForKey: @"city"];
         self.scenes = [decoder decodeObjectForKey: @"scenes"];
         self.price = [decoder decodeObjectForKey: @"price"];
     }
@@ -111,7 +112,7 @@
 - (void) encodeWithCoder: (NSCoder*) encoder {
     [super encodeWithCoder: encoder];
     
-    // version
+    [encoder encodeObject: self.city forKey: @"city"];
     [encoder encodeObject: self.scenes forKey: @"scenes"];
     [encoder encodeObject: self.price forKey: @"price"];
 }

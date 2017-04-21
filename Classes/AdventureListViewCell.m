@@ -12,7 +12,7 @@
 
 @implementation AdventureListViewCell
 
-@synthesize titleLabel, priceLabel, distanceLabel, statusLabel;
+@synthesize titleLabel, cityLabel, priceLabel, distanceLabel, statusLabel;
 
 
 // Initialisation ------------------------------------------------------------------------
