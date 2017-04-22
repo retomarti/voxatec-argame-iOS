@@ -50,6 +50,10 @@ static TourManager* theManager = nil;
     self = [super init];
     
     if (self) {
+        theAdventure = nil;
+        theStory = nil;
+        theScene = nil;
+        sceneDataLoaded = NO;
         gameStatus = [GameStatus loadInstance];
         parser = [ObjFileParser new];
     }
@@ -86,8 +90,14 @@ static TourManager* theManager = nil;
 
 
 - (Scene*) gotoFirstScene {
-    theScene = [theStory firstScene];
-    [gameStatus startScene: theScene ofStory: theStory];
+    Scene* firstScene = [theStory firstScene];
+    
+    if (firstScene != theScene) {
+        theScene = firstScene;
+        sceneDataLoaded = NO;
+        [gameStatus startScene: theScene ofStory: theStory];
+    }
+    
     return theScene;
 }
 
@@ -95,6 +105,7 @@ static TourManager* theManager = nil;
 - (Scene*) gotoNextScene: (Scene*) currentScene {
     [gameStatus endScene: currentScene ofStory: theStory];
     theScene = [theStory nextSceneTo: currentScene];
+    sceneDataLoaded = NO;
     
     if (theScene != nil) {
         [gameStatus startScene: theScene ofStory: theStory];
@@ -114,10 +125,15 @@ static TourManager* theManager = nil;
     Scene* sceneProxy = [gameStatus lastStartedSceneOfStory: theStory];
     
     if (sceneProxy != nil) {
-        theScene = [theStory sceneWithId: sceneProxy.id];
+        Scene* currScene = [theStory sceneWithId: sceneProxy.id];
+        if (currScene != theScene) {
+            theScene = currScene;
+            sceneDataLoaded = NO;
+        }
     }
     else {
         theScene = [theStory firstScene];
+        sceneDataLoaded = NO;
         [gameStatus startScene: theScene ofStory: theStory];
     }
     
@@ -128,6 +144,8 @@ static TourManager* theManager = nil;
 - (void) endStory: (Story*) currentStory {
     [gameStatus endStory: currentStory];
     theStory = nil;
+    theScene = nil;
+    sceneDataLoaded = NO;
 }
 
 
@@ -706,8 +724,14 @@ static TourManager* theManager = nil;
 - (void) prepareSceneForSearch: (Scene*) aScene {
     NSAssert(aScene != nil, @"TourManager: aScene is nil for preparing");
     
-    theScene = aScene;
-    [self loadObject3DForScene: aScene];
+    if (!sceneDataLoaded) {
+        // Load all files & notify asynchronously
+        theScene = aScene;
+        [self loadObject3DForScene: aScene];
+    }
+    else {
+        [self.delegate didFinishPreparingScene: aScene];
+    }
 }
 
 
@@ -787,13 +811,15 @@ static TourManager* theManager = nil;
             [fileMapTable removeAllObjects];
             
             // Inform delegate
-            if (error == nil)
+            if (error == nil) {
                 [self.delegate didFinishPreparingScene: theScene];
+                sceneDataLoaded = YES;
+            }
             else {
                 [self.delegate didFailPreparingSceneWithError: error];
+                sceneDataLoaded = NO;
             }
             
-            theScene = nil;
         }
     }
 }

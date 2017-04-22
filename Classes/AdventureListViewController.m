@@ -48,6 +48,11 @@
     return kHeaderViewHeight;
 }
 
+/*
+- (CGFloat) tableView: (UITableView*) tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath {
+    return kCellViewHeight;
+}
+*/
 
 - (UIView*) tableView: (UITableView*) tableView viewForHeaderInSection: (NSInteger) section {
     UIView* headerView = nil;
@@ -146,14 +151,9 @@
     distText = [NSString stringWithFormat: distText, userDist / 1000.0];
     
     cell.titleLabel.text = [story name];
-    
     cell.cityLabel.text = story.city.name;
-    
     cell.priceLabel.text = priceText;
-    // cell.priceLabel.textColor = [UIColor grayColor];
-    
     cell.distanceLabel.text = distText;
-    // cell.distanceLabel.textColor = [UIColor grayColor];
     
     GameStatus* gameStatus = [[TourManager theManager] gameStatus];
     if ([gameStatus hasStoryStarted: story]) {

@@ -38,6 +38,7 @@
     Adventure* theAdventure;    // Current adventure
     Story* theStory;            // Current story
     Scene* theScene;            // Current scene
+    BOOL sceneDataLoaded;       // Flag
     GameStatus* gameStatus;     // Persisted game status
     ObjFileParser* parser;      // obj file parser
     NSMapTable* fileMapTable;   // maps request-URL to file objects

@@ -256,12 +256,6 @@
 
     // Story ended
     else {
-        /*
-        NSString* title = NSLocalizedString(@"STORY_FINISHED_DLG_TITLE", @"Story finished dialog title");
-        NSString* successMsg = NSLocalizedString(@"STORY_FINISHED_DLG_MESSAGE", @"Story finished message");
-        [self showMessageWithTitle: title message: successMsg];
-        */
-        
         self.scene = nil;
         [[TourManager theManager] endStory: self.story];
     }
